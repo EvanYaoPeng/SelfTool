@@ -1,0 +1,14 @@
+D:\SelfTest\SelfTools\SelfTools\bin\Debug\SelfTools.exe
+D:\SelfTest\SelfTools\SelfTools\bin\Debug\SelfTools.pdb
+D:\SelfTest\SelfTools\SelfTools\bin\Debug\PDFOperate.dll
+D:\SelfTest\SelfTools\SelfTools\bin\Debug\itextsharp.dll
+D:\SelfTest\SelfTools\SelfTools\bin\Debug\PDFOperate.pdb
+D:\SelfTest\SelfTools\SelfTools\obj\Debug\SelfTools.csprojResolveAssemblyReference.cache
+D:\SelfTest\SelfTools\SelfTools\obj\Debug\SelfTools.Form1.resources
+D:\SelfTest\SelfTools\SelfTools\obj\Debug\SelfTools.Properties.Resources.resources
+D:\SelfTest\SelfTools\SelfTools\obj\Debug\SelfTools.csproj.GenerateResource.Cache
+D:\SelfTest\SelfTools\SelfTools\obj\Debug\SelfTools.exe
+D:\SelfTest\SelfTools\SelfTools\obj\Debug\SelfTools.pdb
+D:\SelfTest\SelfTools\SelfTools\obj\Debug\Interop.SpeechLib.dll
+D:\SelfTest\SelfTools\SelfTools\obj\Debug\SelfTools.csproj.ResolveComReference.cache
+D:\SelfTest\SelfTools\SelfTools\obj\Debug\SelfTools.FileOpreate.resources

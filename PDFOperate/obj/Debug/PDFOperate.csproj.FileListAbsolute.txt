@@ -1,0 +1,5 @@
+D:\SelfTest\SelfTools\PDFOperate\bin\Debug\PDFOperate.dll
+D:\SelfTest\SelfTools\PDFOperate\bin\Debug\PDFOperate.pdb
+D:\SelfTest\SelfTools\PDFOperate\obj\Debug\PDFOperate.dll
+D:\SelfTest\SelfTools\PDFOperate\obj\Debug\PDFOperate.pdb
+D:\SelfTest\SelfTools\PDFOperate\obj\Debug\PDFOperate.csprojResolveAssemblyReference.cache

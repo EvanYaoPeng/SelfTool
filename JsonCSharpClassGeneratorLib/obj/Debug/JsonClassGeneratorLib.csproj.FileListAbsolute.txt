@@ -1,0 +1,17 @@
+D:\learn\jsonclassgenerator_4a0b570f6c44\JsonCSharpClassGeneratorLib\bin\Debug\Xamasoft.JsonClassGenerator.dll
+D:\learn\jsonclassgenerator_4a0b570f6c44\JsonCSharpClassGeneratorLib\bin\Debug\Xamasoft.JsonClassGenerator.pdb
+D:\learn\jsonclassgenerator_4a0b570f6c44\JsonCSharpClassGeneratorLib\bin\Debug\Newtonsoft.Json.dll
+D:\learn\jsonclassgenerator_4a0b570f6c44\JsonCSharpClassGeneratorLib\bin\Debug\System.Data.Entity.Design.PluralizationServices.dll
+D:\learn\jsonclassgenerator_4a0b570f6c44\JsonCSharpClassGeneratorLib\obj\Debug\Xamasoft.JsonClassGenerator.Properties.Resources.resources
+D:\learn\jsonclassgenerator_4a0b570f6c44\JsonCSharpClassGeneratorLib\obj\Debug\JsonClassGeneratorLib.csproj.GenerateResource.Cache
+D:\learn\jsonclassgenerator_4a0b570f6c44\JsonCSharpClassGeneratorLib\obj\Debug\Xamasoft.JsonClassGenerator.dll
+D:\learn\jsonclassgenerator_4a0b570f6c44\JsonCSharpClassGeneratorLib\obj\Debug\Xamasoft.JsonClassGenerator.pdb
+D:\learn\jsonclassgenerator_4a0b570f6c44\JsonCSharpClassGeneratorLib\obj\Debug\JsonClassGeneratorLib.csprojResolveAssemblyReference.cache
+D:\SelfTest\SelfTools\JsonCSharpClassGeneratorLib\bin\Debug\Xamasoft.JsonClassGenerator.dll
+D:\SelfTest\SelfTools\JsonCSharpClassGeneratorLib\bin\Debug\Xamasoft.JsonClassGenerator.pdb
+D:\SelfTest\SelfTools\JsonCSharpClassGeneratorLib\obj\Debug\JsonClassGeneratorLib.csprojResolveAssemblyReference.cache
+D:\SelfTest\SelfTools\JsonCSharpClassGeneratorLib\obj\Debug\Xamasoft.JsonClassGenerator.Properties.Resources.resources
+D:\SelfTest\SelfTools\JsonCSharpClassGeneratorLib\obj\Debug\JsonClassGeneratorLib.csproj.GenerateResource.Cache
+D:\SelfTest\SelfTools\JsonCSharpClassGeneratorLib\obj\Debug\Xamasoft.JsonClassGenerator.dll
+D:\SelfTest\SelfTools\JsonCSharpClassGeneratorLib\obj\Debug\Xamasoft.JsonClassGenerator.pdb
+D:\SelfTest\SelfTools\JsonCSharpClassGeneratorLib\bin\Debug\Newtonsoft.Json.dll

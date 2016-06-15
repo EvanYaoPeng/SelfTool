@@ -1,0 +1,125 @@
+﻿<html>
+<head>
+    <title>直接页面显示器</title>
+    <style type="text/css">
+        BODY {
+            MARGIN-TOP: 0px;
+            FONT-SIZE: 9pt;
+            MARGIN-LEFT: 4px;
+            MARGIN-RIGHT: 0px;
+            FONT-FAMILY: "微软雅黑";
+        }
+
+        A {
+            FONT-WEIGHT: 400;
+            FONT-SIZE: 13px;
+            COLOR: black;
+            TEXT-DECORATION: none;
+        }
+
+            A: hover {
+                FONT-WEIGHT: 400;
+                FONT-SIZE: 13px;
+                COLOR: red;
+                TEXT-DECORATION: underline;
+            }
+
+            A: active {
+                CURSOR: hand;
+                COLOR: #ff0033;
+            }
+
+        .STYLE1 {
+            color: #0000FF;
+            font-size: 40px;
+        }
+
+        .STYLE2 {
+            font-weight: bold;
+            font-size: 30px;
+        }
+    </style>
+    <meta http-equiv=Content-Type content="text/html; charset=gb2312">
+</head>
+<body>
+    <center>
+        <span class="STYLE1"><font face=隶书>直接页面显示器</font></span>
+    </center><br>
+    <center>
+        <table style="BORDER-COLLAPSE: collapse" bordercolor=#111111 cellspacing=0
+               cellpadding=0 border=0 borderlight="green">
+            <tbody>
+                <tr>
+                    <td align=middle><span class="STYLE2"><font color=red>请在下面窗口中输入HTML代码</font></span></td>
+                </tr>
+                <tr>
+                    <td align=middle>
+                        <script language=JavaScript>
+                            function trestart() {
+                                if (script) {
+                                    clear = confirm("确定要清除吗？", '');
+                                    if (clear) {
+                                        document.script.reset();
+                                        document.script.value = "";
+                                    }
+                                }
+                            }
+                            function test() {
+                                {
+                                    temp = document.script.tester.value;
+                                    testwin = open("", "aa", "status=no,menubar=yes");
+                                    testwin.document.open();
+                                    testwin.document.write(temp);
+                                    testwin.document.close();
+                                }
+                            }
+                            function about() {
+                                alert("HTML代码直接显示出页面来")
+                            }
+                            function help() {
+                                OpenWindow = window.open("", "newwin", "height=220,width=470,toolbar=no,scrollbars=" + scroll + ",menubar=no");
+                                OpenWindow.document.write("<body bgcolor='white' text='black' alink='blue'vlink='blue' link='blue'><TITLE>帮助信息</TITLE>")
+                                OpenWindow.document.write("<center>你只要把你想显示的代码放到上页的输入框中，你自己也可以写代码，按显示键就能显示你的页面内容</center><br>")
+                                OpenWindow.document.write("<center><a href='mailto:87003056@163.com' target='main'>写信给我</a></Center><br>")
+                                OpenWindow.document.write("<center><a href='javascript:close()'>关闭本窗口</a></Center>")
+                                OpenWindow.document.close()
+                                self.name = "main"
+                            }
+
+                        </script>
+
+                        <form name=script>
+                            <textarea name=tester rows=8 wrap=off cols=50></textarea><br><input onclick=test() type=button value=显示>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </center>
+    <center>
+        <div align=center>
+            <center>
+                <table id=AutoNumber1 style="BORDER-COLLAPSE: collapse" bordercolor=#111111
+                       cellspacing=0 cellpadding=0 width=360 border=0>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p align=left>
+                                    <span style="FONT-SIZE: 9pt">
+                                        将下面代码复制到输入框试试<br><font color=#ff0033>
+                                            <br>&lt;html&gt;<br>&lt;head&gt;<br>&lt;title&gt;你好&lt;/title&gt;<br>&lt;/head&gt;<br><br>&lt;body&gt;<br>
+                                            你好，欢迎光临源码爱好者网页特效栏目！<br>
+                                            &lt;/body&gt;<br><br>&lt;/html&gt;
+                                        </font>
+                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </center>
+        </div>
+    </center>
+    <iframe name="aa" width="968" height="300"></iframe> 
+</body>
+</html>

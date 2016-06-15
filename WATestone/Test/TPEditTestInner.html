@@ -1,0 +1,384 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <script src="../Scripts/jquery1.9.0.min.js"></script>
+    <script src="../Scripts/jquery-ui-1.9.2.custom.min.js"></script>
+    <!--<script src="Scripts/vosung.common.js"></script>
+    <script src="Scripts/vosung.textwinbtn.js"></script>
+    <script src="Scripts/vosung.form.js"></script>
+    <script src="Scripts/vosung.inbodytabs.js"></script>
+    <script src="Scripts/vosung.combobox.js"></script>
+    <script src="Scripts/vosung.gridview.js"></script>-->
+    <link href="../Themes/redmond/jquery-ui-1.9.2.custom.css" rel="stylesheet" />
+    <link href="../Themes/redmond/jquery-ui-1.9.2.main.css" rel="stylesheet" />
+    <script src="../Themes/redmond/win-size.common.js"></script>
+
+
+
+    <script type="text/javascript" src="../Scripts/colorPicker/spectrum.js"></script>
+    <script type="text/javascript" src="../Scripts/colorPicker/prettify.js"></script>
+    <script type="text/javascript" src="../Scripts/colorPicker/toc.js"></script>
+    <script type="text/javascript" src="../Scripts/colorPicker/docs.js"></script>
+    <link rel="stylesheet" href="../Scripts/colorPicker/spectrum.css" />
+
+    <style type="text/css" media="screen">
+        body {
+            overflow: auto;
+        }
+
+        #editor {
+            margin: 0;
+            position: relative;
+            top: 0;
+            bottom: 0px;
+            left: 0;
+            right: 0;
+            height: 260px;
+            width: 100%;
+        }
+
+        #statusBar {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 20px;
+            background-color: rgb(245, 245, 245);
+            color: gray;
+        }
+
+        .ace_status-indicator {
+            color: gray;
+            position: absolute;
+            right: 0;
+            /*border-left: 1px solid;*/
+        }
+    </style>
+
+
+
+    <script type="text/javascript">
+        var spect = {
+            allowEmpty: true,
+            height: 25,
+            width: 60,
+            showInput: true,
+            containerClassName: "full-spectrum",
+            showInitial: true,
+            showPalette: true,
+            showSelectionPalette: true,
+            showAlpha: true,
+            maxPaletteSize: 10,
+            cancelText: "取消",
+            chooseText: "确定",
+            preferredFormat: "hex",
+            localStorageKey: "spectrum.demo",
+            move: function (color) {
+                updateBorders(color);
+            },
+            show: function () {
+
+            },
+            beforeShow: function () {
+
+            },
+            hide: function (color) {
+                updateBorders(color);
+            },
+
+            palette: [
+                ["rgb(0, 0, 0)", "rgb(67, 67, 67)", "rgb(102, 102, 102)", /*"rgb(153, 153, 153)","rgb(183, 183, 183)",*/
+                "rgb(204, 204, 204)", "rgb(217, 217, 217)", /*"rgb(239, 239, 239)", "rgb(243, 243, 243)",*/ "rgb(255, 255, 255)"],
+                ["rgb(152, 0, 0)", "rgb(255, 0, 0)", "rgb(255, 153, 0)", "rgb(255, 255, 0)", "rgb(0, 255, 0)",
+                "rgb(0, 255, 255)", "rgb(74, 134, 232)", "rgb(0, 0, 255)", "rgb(153, 0, 255)", "rgb(255, 0, 255)"],
+                ["rgb(230, 184, 175)", "rgb(244, 204, 204)", "rgb(252, 229, 205)", "rgb(255, 242, 204)", "rgb(217, 234, 211)",
+                "rgb(208, 224, 227)", "rgb(201, 218, 248)", "rgb(207, 226, 243)", "rgb(217, 210, 233)", "rgb(234, 209, 220)",
+                "rgb(221, 126, 107)", "rgb(234, 153, 153)", "rgb(249, 203, 156)", "rgb(255, 229, 153)", "rgb(182, 215, 168)",
+                "rgb(162, 196, 201)", "rgb(164, 194, 244)", "rgb(159, 197, 232)", "rgb(180, 167, 214)", "rgb(213, 166, 189)",
+                "rgb(204, 65, 37)", "rgb(224, 102, 102)", "rgb(246, 178, 107)", "rgb(255, 217, 102)", "rgb(147, 196, 125)",
+                "rgb(118, 165, 175)", "rgb(109, 158, 235)", "rgb(111, 168, 220)", "rgb(142, 124, 195)", "rgb(194, 123, 160)",
+                "rgb(166, 28, 0)", "rgb(204, 0, 0)", "rgb(230, 145, 56)", "rgb(241, 194, 50)", "rgb(106, 168, 79)",
+                "rgb(69, 129, 142)", "rgb(60, 120, 216)", "rgb(61, 133, 198)", "rgb(103, 78, 167)", "rgb(166, 77, 121)",
+                /*"rgb(133, 32, 12)", "rgb(153, 0, 0)", "rgb(180, 95, 6)", "rgb(191, 144, 0)", "rgb(56, 118, 29)",
+                "rgb(19, 79, 92)", "rgb(17, 85, 204)", "rgb(11, 83, 148)", "rgb(53, 28, 117)", "rgb(116, 27, 71)",*/
+                "rgb(91, 15, 0)", "rgb(102, 0, 0)", "rgb(120, 63, 4)", "rgb(127, 96, 0)", "rgb(39, 78, 19)",
+                "rgb(12, 52, 61)", "rgb(28, 69, 135)", "rgb(7, 55, 99)", "rgb(32, 18, 77)", "rgb(76, 17, 48)"]
+            ]
+        };
+
+        $(function () {
+            
+            debugger;
+            IniteColorControl();
+            //加载字体粗细程度
+          //  input_fontweight();
+            //加载字体样式
+          //  input_fontdecoration();
+            //加载字体类型
+           // input_fontfamily();
+
+           
+        });
+
+
+        //初始化颜色控件
+        function IniteColorControl() {
+            //行头字体颜色
+            $("#headFontColor").spectrum(spect);
+            //行头背景颜色
+            $("#headbgColor").spectrum(spect);
+            ////奇数行背景颜色
+            //$("#dataRowJBgColor").spectrum(spect);
+            ////奇数行字体颜色
+            //$("#dataRowFontJColor").spectrum(spect);
+            ////偶数行背景  dataRowOBgColor
+            //$("#dataRowOBgColor").spectrum(spect);
+            ////偶数行字体颜色  dataRowFontOColor
+            //$("#dataRowFontOColor").spectrum(spect);
+            ////标题字体颜色  dataRowFontOColor
+            //$("#titleFontColor").spectrum(spect);
+            ////标题区域背景颜色titleAreaBgColor
+            //$("#titleAreaBgColor").spectrum(spect);
+        }
+        //这里是写入  字体类型的方法
+        function input_fontfamily() {
+            var fontfamily_arr = new Array();
+            fontfamily_arr.push({ 'id': "SimSun", 'text': "宋体" });
+            fontfamily_arr.push({ 'id': "SimHei", 'text': "黑体" });
+            fontfamily_arr.push({ 'id': "Microsoft YaHei", 'text': "微软雅黑" });
+            fontfamily_arr.push({ 'id': "Microsoft JhengHei", 'text': "微软正黑体" });
+            fontfamily_arr.push({ 'id': "FangSong", 'text': "仿宋" });
+            fontfamily_arr.push({ 'id': "KaiTi", 'text': "楷体" });
+            fontfamily_arr.push({ 'id': "LiSu", 'text': "隶书" });
+            fontfamily_arr.push({ 'id': "YouYuan", 'text': "幼圆" });
+            fontfamily_arr.push({ 'id': "STCaiyun", 'text': "华文彩云" });
+            fontfamily_arr.push({ 'id': "STXingkai", 'text': "华文行楷" });
+            fontfamily_arr.push({ 'id': "STLiti", 'text': "华文隶书" });
+            fontfamily_arr.push({ 'id': "STXinwei", 'text': "华文新魏" });
+            fontfamily_arr.push({ 'id': "FZShuTi", 'text': "方正舒体" });
+            fontfamily_arr.push({ 'id': "FZYaoti", 'text': "方正姚体" });
+            var fontfamily = {
+                editable: false,
+                valueField: 'id',
+                textField: 'text',
+                source: fontfamily_arr,
+                formatter: function (row) {
+                    var row_id = row.id;
+                    var row_text = row.text;
+                    return '<span style="font-size:large;font-family:' + row_id + '">' + row_text + '</span>';
+                }
+
+
+            };
+            debugger;
+            $("#headFontType").combobox({ source: fontfamily_arr });//.combobox("option", "source", ["c++", "java", "php", "coldfusion", "javascript", "asp", "ruby"])
+            //.combobox({ source: [ "c++", "java", "php", "coldfusion", "javascript", "asp", "ruby" ] });
+            $("#dataRowFontJType").combobox({ source: fontfamily_arr });
+            $("#dataRowFontOType").combobox(fontfamily_arr);
+            $("#titleFontType").combobox(fontfamily_arr);
+        }
+        //字体样式
+        function input_fontdecoration() {
+            var fontdecoration_arr = new Array();
+            //text-decoration   font-style
+            fontdecoration_arr.push({ 'id': "normal", 'text': "正常", 'property': 'font-style' });
+            fontdecoration_arr.push({ 'id': "oblique", 'text': "斜体", 'property': 'font-style' });
+            //fontdecoration_arr.push({ 'id': "dashed", 'text': "虚线", 'property': 'text-decoration' });
+            //fontdecoration_arr.push({ 'id': "double", 'text': "双线", 'property': 'text-decoration' });
+            fontdecoration_arr.push({ 'id': "line-through", 'text': "删除线", 'property': 'text-decoration' });
+            fontdecoration_arr.push({ 'id': "overline", 'text': "上划线", 'property': 'text-decoration' });
+            fontdecoration_arr.push({ 'id': "underline", 'text': "下划线", 'property': 'text-decoration' });
+
+            // fontdecoration_arr.push({ 'id': "wavy", 'text': "波浪线", 'property': 'text-decoration' });
+            var fontstyle = {
+                editable: false,
+                valueField: 'id',
+                textField: 'text',
+                data: fontdecoration_arr,
+                formatter: function (row) {
+                    var row_id = row.id;
+                    var row_text = row.text;
+                    var row_property = row.property;
+                    return '<span style="font-size:large; ' + row_property + ':' + row_id + '">' + row_text + '</span>';
+                }
+            };
+            $("#headFontStyle").combobox(fontstyle);
+            $("#dataRowFontJStyle").combobox(fontstyle);
+            $("#dataRowFontOStyle").combobox(fontstyle);
+            $("#titleFontStyle").combobox(fontstyle);
+        }
+
+        //写入字体粗细的控件
+        function input_fontweight() {
+            var fontweight_arr = new Array();
+            for (var i = 100; i < 1000; i += 100) {
+                var s = { 'id': i, 'text': i };
+                fontweight_arr.push(s);
+            }
+            fontweight_arr.push({ 'id': "bold", 'text': "粗" });
+            fontweight_arr.push({ 'id': "bolder", 'text': "比较粗" });
+            fontweight_arr.push({ 'id': "lighter", 'text': "比较细" });
+            fontweight_arr.push({ 'id': "normal", 'text': "普通" });
+            var fontweight = {
+                editable: false,
+                valueField: 'id',
+                textField: 'text',
+                data: fontweight_arr,
+                formatter: function (row) {
+                    var row_id = row.id;
+                    var row_text = row.text;
+                    return '<span style="font-weight:' + row_id + ';font-size:large">' + row_text + '</span>';
+                }
+            };
+
+            $("#headFontWeight").combobox(fontweight);
+            $("#dataRowFontJWeight").combobox(fontweight);
+            $("#dataRowFontOWeight").combobox(fontweight);
+            $("#titleFontWeight").combobox(fontweight);
+        }
+
+        function setWindShow(id) {
+            $("").hide();
+            $("").show();
+        }
+    </script>
+</head>
+<body>
+
+    <div id="winShowtable">
+        <div data-options="fit:true">
+            <div data-options="region:'west',split:true" style="width:200px;">
+                <table id="showPlan" class="easyui-datagrid" style=" width :100%;height:100%;"
+                       data-options=" pagination: false,
+                                toolbar: '#planToolBar',
+                                border: false,
+                                fit: true,
+                                striped: true,
+                                fitColumns: true,
+                                remoteSort: false,
+                                multiSort: true,
+                                ctrlSelect: true,
+                                showHeader:true,
+                                onClickRow:onClickShowPlan
+                             ">
+                    <thead>
+                        <tr>
+                            <th data-options="field: 'ShowStyle',  title: 'guid',hidden:true, width: 100, halign: 'center',align:'center', sortable: true, resizable: true"></th>
+                            <th data-options="field: 'guid',  title: 'guid',hidden:true, width: 100, halign: 'center',align:'center', sortable: true, resizable: true"></th>
+                            <th data-options="field: 'FCode',  title: '编码', width: 100, halign: 'center',align:'center', sortable: true, resizable: true"></th>
+                            <th data-options="field: 'PageSize',  title: 'PageSize',hidden:true, width: 100, halign: 'center',align:'center', sortable: true, resizable: true"></th>
+                            <th data-options="field: 'SortFiled',  title: 'SortFiled',hidden:true, width: 100, halign: 'center',align:'center', sortable: true, resizable: true"></th>
+                            <th data-options="field: 'SortMode',  title: 'SortMode',hidden:true, width: 100, halign: 'center',align:'center', sortable: true, resizable: true"></th>
+                            <th data-options="field: 'KbCode',  title: 'KbCode',hidden:true, width: 100, halign: 'center',align:'center', sortable: true, resizable: true"></th>
+                            <th data-options="field: 'Fname',  title: '名称', width: 100, halign: 'center',align:'center', sortable: true, resizable: true"></th>
+                            <th data-options="field: 'IsDefault',  title: '默认方案', width: 100, halign: 'center',align:'center', sortable: true, resizable: true,formatter:isDefault"></th>
+                        </tr>
+                    </thead>
+                </table>
+                <div id="planToolBar" style="border:none; height:25px">
+                    <div style="margin-bottom:5px">
+                        <a href="#" class="easyui-linkbutton" onclick="showPlanMenuClick('add')" data-options="iconCls:'icon-add',plain:true"></a>
+                        <span class="Exd-Split"></span>
+                        <a href="#" class="easyui-linkbutton" onclick="showPlanMenuClick('del')" data-options="iconCls:'icon-delete',plain:true"></a>
+                        <span class="Exd-Split"></span>
+                        <a href="#" class="easyui-linkbutton" id="A1" onclick="showPlanMenuClick('save')" data-options="iconCls:'icon-save',plain:true"></a>
+                    </div>
+                </div>
+            </div>
+            <div data-options="region:'center',">               
+                <form id="tableStyle">
+                    <table style="padding-left:20px;padding-top:10px; margin:0px; overflow:auto">
+                        <tr>
+                            <td colspan="2" style="text-align:center;font-family:'Microsoft YaHei';font-weight:bolder;font-size:20px">显示样式设置</td>
+                        </tr>                        
+                        <tr>
+                            <td style="width:80px; text-align:right;font-weight:bolder">列头样式:</td>
+                            <td>
+                                行高<input id="headHeight" style="width:30px" type="text" name="headHeight" />px &nbsp;&nbsp;
+                                行背景<input id="headbgColor" name="headbgColor" />&nbsp;&nbsp;
+                                字体颜色<input id="headFontColor" name="headFontColor" /> &nbsp;&nbsp;
+                                字体大小<input id="headFontSize" style="width:30px" type="text" name="headFontSize" />px &nbsp;&nbsp;
+                                字体粗细<input id="headFontWeight" name="headFontWeight" style="width:100px" />
+                            </td>
+                        </tr>
+                      
+                    </table>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!--editor section-->
+    <section id="" class="">
+        <header>Edit HTML</header>
+        <pre id="editor">&lt;html&gt;&lt;/html&gt;</pre>
+        <footer id="statusBar"></footer>
+    </section>
+    <input type="button" onclick="runCode()" title="测试" />
+    <!-- load ace -->
+    <script src="../Scripts/js/ace/ace.js"></script>
+    <!-- load ace language tools -->
+    <script src="../Scripts/js/ace/ext-language_tools.js"></script>
+    <!-- load ace statusbar extension -->
+    <script src="../Scripts/js/ace/ext-statusbar.js"></script>
+
+    <script>
+        // trigger extension
+        ace.require("ace/ext/language_tools");
+
+        var editor = ace.edit("editor");
+        editor.session.setMode("ace/mode/html");
+        editor.setTheme("ace/theme/tomorrow");
+        // enable autocompletion and snippets
+        editor.setOptions({
+            enableBasicAutocompletion: true,
+            enableSnippets: true,
+            enableLiveAutocompletion: false
+        });
+        editor.on("change", function (e) {/*console.log(editor.getValue());*/ })
+
+        var StatusBar = ace.require("ace/ext/statusbar").StatusBar;
+        // create a simple selection status indicator
+        var statusBar = new StatusBar(editorevan, document.getElementById("statusBar"));
+
+        //获取editor中编辑的值
+        function runCode() {
+            alert(editor.getValue());
+        }
+    </script>
+
+    <script src="js/show_own_source.js"></script>
+
+    <!--show static highLight-->
+    <!-- load ace static_highlight extension -->
+    <script src="Scripts/js/ace/ext-static_highlight.js"></script>
+    <script>
+        //var highlight = ace.require("ace/ext/static_highlight")
+        //var dom = ace.require("ace/lib/dom")
+        //function qsa(sel) {
+        //    return Array.apply(null, document.querySelectorAll(sel));
+        //}
+
+        //qsa(".code").forEach(function (codeEl) {
+        //    highlight(codeEl, {
+        //        mode: codeEl.getAttribute("ace-mode"),
+        //        theme: codeEl.getAttribute("ace-theme"),
+        //        startLineNumber: 1,
+        //        showGutter: codeEl.getAttribute("ace-gutter"), //line number
+        //        trim: true
+        //    }, function (highlighted) {
+
+        //    });
+        //});
+    </script>
+    <!--判断编译是否错误可以通过 class： ace_error 是否存在-->
+</body>
+</html>

@@ -1,0 +1,4 @@
+D:\SelfTest\SelfTools\EmailOperate\bin\Debug\EmailOperate.dll
+D:\SelfTest\SelfTools\EmailOperate\bin\Debug\EmailOperate.pdb
+D:\SelfTest\SelfTools\EmailOperate\obj\Debug\EmailOperate.dll
+D:\SelfTest\SelfTools\EmailOperate\obj\Debug\EmailOperate.pdb
