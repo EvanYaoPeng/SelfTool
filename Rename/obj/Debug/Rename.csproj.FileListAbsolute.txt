@@ -3,3 +3,4 @@ D:\SelfTest\SelfTools\Rename\bin\Debug\Rename.exe
 D:\SelfTest\SelfTools\Rename\bin\Debug\Rename.pdb
 D:\SelfTest\SelfTools\Rename\obj\Debug\Rename.exe
 D:\SelfTest\SelfTools\Rename\obj\Debug\Rename.pdb
+D:\SelfTest\SelfTools\Rename\obj\Debug\Rename.csprojResolveAssemblyReference.cache
