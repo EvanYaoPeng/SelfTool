@@ -224,7 +224,7 @@ namespace PDFOperate
         /// <param name="readPath"></param>
         public void addLayer(string readPath)
         {
-            string watermarkedFile = @"C:\Users\renaw\Desktop\创建多个Pdf新页.pdf";
+            string watermarkedFile = @"C:\Users\renaw\Desktop\123.pdf";
             // Creating watermark on a separate layer
             // Creating iTextSharp.text.pdf.PdfReader object to read the Existing PDF Document
             PdfReader reader1 = new PdfReader(watermarkedFile);
@@ -331,5 +331,7 @@ namespace PDFOperate
             reader.Close();
             return strPdf.ToString();
         }
+
+
     }
 }

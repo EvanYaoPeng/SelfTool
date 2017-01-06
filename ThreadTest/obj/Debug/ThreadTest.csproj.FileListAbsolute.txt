@@ -2,4 +2,3 @@ D:\SelfTest\SelfTools\ThreadTest\bin\Debug\ThreadTest.exe
 D:\SelfTest\SelfTools\ThreadTest\bin\Debug\ThreadTest.pdb
 D:\SelfTest\SelfTools\ThreadTest\obj\Debug\ThreadTest.exe
 D:\SelfTest\SelfTools\ThreadTest\obj\Debug\ThreadTest.pdb
-D:\SelfTest\SelfTools\ThreadTest\obj\Debug\ThreadTest.csprojResolveAssemblyReference.cache

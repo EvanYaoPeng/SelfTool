@@ -11,13 +11,13 @@ namespace Rename
     {
         static void Main(string[] args)
         {
-            DirectoryInfo di = new DirectoryInfo(@"D:\tt");
+            DirectoryInfo di = new DirectoryInfo(@"D:\learn\1611\Platform");
             int idx = 0;
 
             foreach (FileInfo fi in di.GetFiles())//可以用 di.GetFiles("*.jpg") 只重名jpg文件
             {
                 //确定是增加前缀，还是后缀
-                string toFileName = fi.Name.Replace("希赛软件设计师视频教程", "");
+                string toFileName = fi.Name.Split('.')[0] + "Service";
                 //if (fi.Name.StartsWith("希赛软件设计师视频教程"))
                 //{
                     

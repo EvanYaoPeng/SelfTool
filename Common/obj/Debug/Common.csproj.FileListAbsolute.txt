@@ -2,3 +2,4 @@ D:\SelfTest\SelfTools\Common\bin\Debug\Common.dll
 D:\SelfTest\SelfTools\Common\bin\Debug\Common.pdb
 D:\SelfTest\SelfTools\Common\obj\Debug\Common.dll
 D:\SelfTest\SelfTools\Common\obj\Debug\Common.pdb
+D:\SelfTest\SelfTools\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
