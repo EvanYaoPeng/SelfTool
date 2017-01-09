@@ -15,7 +15,6 @@ namespace WebApI.Controllers
             return "Success";
         }
 
-
         [ActionName("TestActionName")]
         [HttpGet]
         public object GetById(int id)

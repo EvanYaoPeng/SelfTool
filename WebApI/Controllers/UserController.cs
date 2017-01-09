@@ -12,12 +12,11 @@ namespace WebApI.Controllers
 {
     public class UserController : ApiController
     {
-        User[] users = new User[]
- {
-new User { ID = 1, lower_user_name = "石曼迪", user_key = "mady" },
-new User { ID = 2, lower_user_name = "狗王", user_key = "taisanDog" },
-new User { ID = 3, lower_user_name = "道长", user_key = "kongque" }
- };
+        User[] users = new User[]{
+            new User { ID = 1, lower_user_name = "石曼迪", user_key = "mady" },
+            new User { ID = 2, lower_user_name = "狗王", user_key = "taisanDog" },
+            new User { ID = 3, lower_user_name = "道长", user_key = "kongque" }
+        };
         public IEnumerable<User> GetAllUsers()
         {
             //获取请求地址中的信息
@@ -42,17 +41,14 @@ new User { ID = 3, lower_user_name = "道长", user_key = "kongque" }
             return users;
         }
 
-        //public User GetUserById(int id)
-        //{
-        //    HttpRequest req = HttpContext.Current.Request;
-        //    string ip = req.ServerVariables.Get("Remote_Addr").ToString();
-
-        //    var user = users.FirstOrDefault((p) => p.ID == id);
-        //    if (user == null)
-        //    {
-        //        throw new HttpResponseException(HttpStatusCode.NotFound);
-        //    }
-        //    return user;
-        //}
+        public User GetUserById(int id)
+        {
+            var user = users.FirstOrDefault((p) => p.ID == id);
+            if (user == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+            return user;
+        }
     }
 }
