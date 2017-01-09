@@ -1,0 +1,17 @@
+D:\SelfTest\SelfTools\WebApI\bin\WebApI.dll.config
+D:\SelfTest\SelfTools\WebApI\bin\WebApI.dll
+D:\SelfTest\SelfTools\WebApI\bin\WebApI.pdb
+D:\SelfTest\SelfTools\WebApI\bin\Newtonsoft.Json.dll
+D:\SelfTest\SelfTools\WebApI\bin\System.Net.Http.Formatting.dll
+D:\SelfTest\SelfTools\WebApI\bin\System.Web.Http.dll
+D:\SelfTest\SelfTools\WebApI\bin\System.Web.Http.WebHost.dll
+D:\SelfTest\SelfTools\WebApI\bin\Newtonsoft.Json.xml
+D:\SelfTest\SelfTools\WebApI\bin\System.Net.Http.Formatting.xml
+D:\SelfTest\SelfTools\WebApI\bin\System.Web.Http.xml
+D:\SelfTest\SelfTools\WebApI\bin\System.Web.Http.WebHost.xml
+D:\SelfTest\SelfTools\WebApI\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
+D:\SelfTest\SelfTools\WebApI\bin\zh-Hans\System.Web.Http.resources.dll
+D:\SelfTest\SelfTools\WebApI\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
+D:\SelfTest\SelfTools\WebApI\obj\Debug\WebApI.csprojResolveAssemblyReference.cache
+D:\SelfTest\SelfTools\WebApI\obj\Debug\WebApI.dll
+D:\SelfTest\SelfTools\WebApI\obj\Debug\WebApI.pdb
