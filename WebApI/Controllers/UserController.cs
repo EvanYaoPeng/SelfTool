@@ -20,6 +20,13 @@ namespace WebApI.Controllers
         public IEnumerable<User> GetAllUsers()
         {
             //获取请求地址中的信息
+            NewMethodLog();
+
+            return users;
+        }
+
+        private static void NewMethodLog()
+        {
             StringBuilder showsql = new StringBuilder();
             HttpRequest req = HttpContext.Current.Request;
             foreach (var item in req.ServerVariables)
@@ -27,18 +34,18 @@ namespace WebApI.Controllers
                 showsql.AppendFormat("{0}:{1}\r\n", item.ToString(), req.ServerVariables.Get(item.ToString()));
             }
             //获取客户端IP方法
-            string uip = "";
-            if (HttpContext.Current.Request.ServerVariables["HTTP_VIA"] != null) //如何是代理用这个获取IP信息
+            string UserHostAddress = "";
+            if (req.ServerVariables["HTTP_VIA"] != null) //如何是代理用这个获取IP信息
             {
-                uip = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"].ToString();
+                UserHostAddress = req.ServerVariables["HTTP_X_FORWARDED_FOR"].ToString();
             }
             else
             {
-                uip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
+                UserHostAddress = req.ServerVariables["REMOTE_ADDR"].ToString();
             }
 
-
-            return users;
+            string UserAgent = req.ServerVariables.Get("HTTP_USER_AGENT");
+            string URL = req.ServerVariables.Get("URL");
         }
 
         public User GetUserById(int id)
