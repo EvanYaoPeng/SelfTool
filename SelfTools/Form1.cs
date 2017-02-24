@@ -1,4 +1,5 @@
 ﻿using PDFOperate;
+using SelfTools.Report;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -116,6 +117,13 @@ namespace SelfTools
             {
                // LogHelper.WriteApplicationLog("DoResv方法异常：" + ex.Message);
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            reserveServicePortTypeClient client = new reserveServicePortTypeClient();
+            string str = client.getReportInfoByStudyid("021212260040", "测试");
+
         }
     }
 

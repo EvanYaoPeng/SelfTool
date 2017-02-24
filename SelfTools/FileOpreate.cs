@@ -190,6 +190,24 @@ namespace SelfTools
                 
             }
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            using (FileStream fsRead = new FileStream(@"F:\文档\天猫\wangtao.pdf", FileMode.Open))
+            {
+                int fsLen = (int)fsRead.Length;
+                byte[] heByte = new byte[fsLen];
+                int r = fsRead.Read(heByte, 0, heByte.Length);
+                string myStr = System.Text.Encoding.UTF8.GetString(heByte);
+                string bmstr = Convert.ToBase64String(heByte);
+                byte[] bytes = Convert.FromBase64String(bmstr);
+                FileStream fs = new FileStream("D:\\AAA11111.PDF", FileMode.CreateNew);
+                BinaryWriter bw = new BinaryWriter(fs);
+                bw.Write(bytes, 0, bytes.Length);
+                bw.Close();
+                fs.Close();
+            } 
+        }
     }
 
 
