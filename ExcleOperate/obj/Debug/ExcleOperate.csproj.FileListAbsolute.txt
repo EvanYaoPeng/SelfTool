@@ -1,0 +1,5 @@
+D:\SelfTest\SelfTools\ExcleOperate\obj\Debug\ExcleOperate.csprojResolveAssemblyReference.cache
+D:\SelfTest\SelfTools\ExcleOperate\bin\Debug\ExcleOperate.dll
+D:\SelfTest\SelfTools\ExcleOperate\bin\Debug\ExcleOperate.pdb
+D:\SelfTest\SelfTools\ExcleOperate\obj\Debug\ExcleOperate.dll
+D:\SelfTest\SelfTools\ExcleOperate\obj\Debug\ExcleOperate.pdb

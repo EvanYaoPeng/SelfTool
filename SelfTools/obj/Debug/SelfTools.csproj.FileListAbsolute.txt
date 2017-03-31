@@ -12,3 +12,4 @@ D:\SelfTest\SelfTools\SelfTools\obj\Debug\SelfTools.pdb
 D:\SelfTest\SelfTools\SelfTools\obj\Debug\Interop.SpeechLib.dll
 D:\SelfTest\SelfTools\SelfTools\obj\Debug\SelfTools.csproj.ResolveComReference.cache
 D:\SelfTest\SelfTools\SelfTools\obj\Debug\SelfTools.FileOpreate.resources
+D:\SelfTest\SelfTools\SelfTools\bin\Debug\SelfTools.exe.config

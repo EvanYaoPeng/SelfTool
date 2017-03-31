@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intf="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns1="http://common.pub.tivacs.com" xmlns:tns2="http://po.amlu.tivacs.com" xmlns:impl="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" targetNamespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService">
+      <xsd:import namespace="http://common.pub.tivacs.com" />
+      <xsd:import namespace="http://xml.apache.org/xml-soap" />
+      <xsd:import namespace="http://po.amlu.tivacs.com" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="ArrayOf_soapenc_string">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="soapenc:string[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_xsd_anyType">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="xsd:anyType[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xml.apache.org/xml-soap">
+      <xsd:import namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" />
+      <xsd:import namespace="http://common.pub.tivacs.com" />
+      <xsd:import namespace="http://po.amlu.tivacs.com" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="Vector">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="xsd:anyType" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://common.pub.tivacs.com">
+      <xsd:import namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" />
+      <xsd:import namespace="http://xml.apache.org/xml-soap" />
+      <xsd:import namespace="http://po.amlu.tivacs.com" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="BOException">
+        <xsd:sequence />
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://po.amlu.tivacs.com">
+      <xsd:import namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" />
+      <xsd:import namespace="http://common.pub.tivacs.com" />
+      <xsd:import namespace="http://xml.apache.org/xml-soap" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="CheckBc">
+        <xsd:sequence>
+          <xsd:element name="bcCode" nillable="true" type="soapenc:string" />
+          <xsd:element name="bcName" nillable="true" type="soapenc:string" />
+          <xsd:element name="checkDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element name="checkStatus" nillable="true" type="soapenc:string" />
+          <xsd:element name="cid" nillable="true" type="soapenc:string" />
+          <xsd:element name="personCode" nillable="true" type="soapenc:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="FrameLine">
+        <xsd:sequence>
+          <xsd:element name="callingNextNum" nillable="true" type="soapenc:int" />
+          <xsd:element name="checkLineLogId" nillable="true" type="soapenc:string" />
+          <xsd:element name="checkTime" nillable="true" type="xsd:dateTime" />
+          <xsd:element name="cid" nillable="true" type="soapenc:string" />
+          <xsd:element name="eatStatus" nillable="true" type="soapenc:string" />
+          <xsd:element name="jump" nillable="true" type="soapenc:int" />
+          <xsd:element name="officesCode" nillable="true" type="soapenc:string" />
+          <xsd:element name="officesInputOrder" nillable="true" type="soapenc:int" />
+          <xsd:element name="officesName" nillable="true" type="soapenc:string" />
+          <xsd:element name="operateTime" nillable="true" type="xsd:dateTime" />
+          <xsd:element name="operator" nillable="true" type="soapenc:string" />
+          <xsd:element name="orderLine" nillable="true" type="soapenc:int" />
+          <xsd:element name="persistTime" nillable="true" type="soapenc:int" />
+          <xsd:element name="personCode" nillable="true" type="soapenc:string" />
+          <xsd:element name="personName" nillable="true" type="soapenc:string" />
+          <xsd:element name="personStatus" nillable="true" type="soapenc:string" />
+          <xsd:element name="projDisplayOrder" nillable="true" type="soapenc:string" />
+          <xsd:element name="projectCode" nillable="true" type="soapenc:string" />
+          <xsd:element name="projectName" nillable="true" type="soapenc:string" />
+          <xsd:element name="relineCount" nillable="true" type="soapenc:int" />
+          <xsd:element name="totalTime" nillable="true" type="soapenc:int" />
+          <xsd:element name="vipStatus" nillable="true" type="soapenc:int" />
+          <xsd:element name="vipStatusProj" nillable="true" type="soapenc:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CheckOffices">
+        <xsd:sequence>
+          <xsd:element name="checkDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element name="checkStatus" nillable="true" type="soapenc:string" />
+          <xsd:element name="checkingTime" nillable="true" type="xsd:dateTime" />
+          <xsd:element name="cid" nillable="true" type="soapenc:string" />
+          <xsd:element name="officesCode" nillable="true" type="soapenc:string" />
+          <xsd:element name="officesName" nillable="true" type="soapenc:string" />
+          <xsd:element name="personCode" nillable="true" type="soapenc:string" />
+          <xsd:element name="totalTime" nillable="true" type="soapenc:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="FrameLineBc">
+        <xsd:sequence>
+          <xsd:element name="callingNextNum" nillable="true" type="soapenc:int" />
+          <xsd:element name="checkLineLogId" nillable="true" type="soapenc:string" />
+          <xsd:element name="checkTime" nillable="true" type="xsd:dateTime" />
+          <xsd:element name="cid" nillable="true" type="soapenc:string" />
+          <xsd:element name="eatStatus" nillable="true" type="soapenc:string" />
+          <xsd:element name="jump" nillable="true" type="soapenc:int" />
+          <xsd:element name="officesCode" nillable="true" type="soapenc:string" />
+          <xsd:element name="officesInputOrder" nillable="true" type="soapenc:int" />
+          <xsd:element name="officesName" nillable="true" type="soapenc:string" />
+          <xsd:element name="operateTime" nillable="true" type="xsd:dateTime" />
+          <xsd:element name="operator" nillable="true" type="soapenc:string" />
+          <xsd:element name="orderLine" nillable="true" type="soapenc:int" />
+          <xsd:element name="persistTime" nillable="true" type="soapenc:int" />
+          <xsd:element name="personCode" nillable="true" type="soapenc:string" />
+          <xsd:element name="personName" nillable="true" type="soapenc:string" />
+          <xsd:element name="personStatus" nillable="true" type="soapenc:string" />
+          <xsd:element name="projDisplayOrder" nillable="true" type="soapenc:string" />
+          <xsd:element name="projectCode" nillable="true" type="soapenc:string" />
+          <xsd:element name="projectName" nillable="true" type="soapenc:string" />
+          <xsd:element name="relineCount" nillable="true" type="soapenc:int" />
+          <xsd:element name="totalTime" nillable="true" type="soapenc:int" />
+          <xsd:element name="vipStatus" nillable="true" type="soapenc:int" />
+          <xsd:element name="vipStatusProj" nillable="true" type="soapenc:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="FrameCustomerPerson">
+        <xsd:sequence>
+          <xsd:element name="appno" nillable="true" type="soapenc:string" />
+          <xsd:element name="checkDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element name="cid" nillable="true" type="soapenc:string" />
+          <xsd:element name="floorno" nillable="true" type="soapenc:string" />
+          <xsd:element name="identityCard" nillable="true" type="soapenc:string" />
+          <xsd:element name="maritalStatus" nillable="true" type="soapenc:string" />
+          <xsd:element name="operateTime" nillable="true" type="xsd:dateTime" />
+          <xsd:element name="operator" nillable="true" type="soapenc:string" />
+          <xsd:element name="orderDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element name="orderLine" nillable="true" type="soapenc:int" />
+          <xsd:element name="personAge" nillable="true" type="soapenc:int" />
+          <xsd:element name="personCode" nillable="true" type="soapenc:string" />
+          <xsd:element name="personName" nillable="true" type="soapenc:string" />
+          <xsd:element name="personSex" nillable="true" type="soapenc:string" />
+          <xsd:element name="phone" nillable="true" type="soapenc:string" />
+          <xsd:element name="priority" nillable="true" type="soapenc:int" />
+          <xsd:element name="status" nillable="true" type="soapenc:string" />
+          <xsd:element name="terminal" nillable="true" type="soapenc:string" />
+          <xsd:element name="xh" nillable="true" type="soapenc:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="forCheckOfficeResponse" />
+  <wsdl:message name="changePersonLineRequest1">
+    <wsdl:part name="fl" type="tns2:FrameLineBc" />
+  </wsdl:message>
+  <wsdl:message name="sendMsgToAreaTerminalResponse" />
+  <wsdl:message name="sendLineMessagesRequest">
+    <wsdl:part name="jcks" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="getUnCheckedOfficesRequest">
+    <wsdl:part name="studyID" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="changePersonLineRequest2">
+    <wsdl:part name="fl" type="tns2:FrameLine" />
+  </wsdl:message>
+  <wsdl:message name="changeCurrentLineResponse1" />
+  <wsdl:message name="changePersonLineResponse" />
+  <wsdl:message name="queryProjectByOffcodeRequest">
+    <wsdl:part name="officesCode" type="soapenc:string" />
+    <wsdl:part name="personCode" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="checkOfficeTjzResponse1" />
+  <wsdl:message name="quick_sortResponse">
+    <wsdl:part name="quick_sortReturn" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="getCheckOfficeForFourResponse">
+    <wsdl:part name="getCheckOfficeForFourReturn" type="tns2:CheckOffices" />
+  </wsdl:message>
+  <wsdl:message name="checkEatResponse" />
+  <wsdl:message name="checkingPersonTimeRequest">
+    <wsdl:part name="jcks" type="soapenc:string" />
+    <wsdl:part name="fl" type="tns2:FrameLine" />
+  </wsdl:message>
+  <wsdl:message name="sendPersonMessagesResponse" />
+  <wsdl:message name="changePersonLineRequest">
+    <wsdl:part name="projectCode" type="soapenc:string" />
+    <wsdl:part name="pTime" type="xsd:int" />
+    <wsdl:part name="personCode" type="soapenc:string" />
+    <wsdl:part name="stats" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="checkOfficeTjzRequest1">
+    <wsdl:part name="studyID" type="soapenc:string" />
+    <wsdl:part name="line" type="tns2:FrameLineBc" />
+  </wsdl:message>
+  <wsdl:message name="insertChecklinkRequest">
+    <wsdl:part name="studyID" type="soapenc:string" />
+    <wsdl:part name="project_code" type="soapenc:string" />
+    <wsdl:part name="office_code" type="soapenc:string" />
+    <wsdl:part name="type" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="updateCusPersonResponse" />
+  <wsdl:message name="changeCurrentLineRequest">
+    <wsdl:part name="studyID" type="soapenc:string" />
+    <wsdl:part name="projectCode" type="soapenc:string" />
+    <wsdl:part name="officeCode" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="queryProjectByOffcodeResponse">
+    <wsdl:part name="queryProjectByOffcodeReturn" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="goNextProjResponse" />
+  <wsdl:message name="mainResponse" />
+  <wsdl:message name="changePersonLineResponse1" />
+  <wsdl:message name="CheckOfficeupdResponse" />
+  <wsdl:message name="CheckOfficeupdResponse1" />
+  <wsdl:message name="changeCurrentLineRequest1">
+    <wsdl:part name="studyID" type="soapenc:string" />
+    <wsdl:part name="officeCode" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="getNextCheckOfficeRequest">
+    <wsdl:part name="studyID" type="soapenc:string" />
+    <wsdl:part name="officesCode" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="changePersonLineResponse2" />
+  <wsdl:message name="checkOfficeTjzRequest">
+    <wsdl:part name="studyID" type="soapenc:string" />
+    <wsdl:part name="line" type="tns2:FrameLine" />
+  </wsdl:message>
+  <wsdl:message name="insertChecklinkResponse" />
+  <wsdl:message name="webSetTeamResponse">
+    <wsdl:part name="webSetTeamReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="lineResponse" />
+  <wsdl:message name="goNextProjRequest">
+    <wsdl:part name="studyID" type="soapenc:string" />
+    <wsdl:part name="line" type="tns2:FrameLine" />
+  </wsdl:message>
+  <wsdl:message name="webNotifyMsgResponse">
+    <wsdl:part name="webNotifyMsgReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="webSetTeamRequest">
+    <wsdl:part name="studyID" type="soapenc:string" />
+    <wsdl:part name="jcks" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="forGetLineRequest">
+    <wsdl:part name="vipStatus" type="soapenc:int" />
+    <wsdl:part name="frameLine" type="tns2:FrameLine" />
+    <wsdl:part name="lineList" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="sendAreaLineMessagesRequest">
+    <wsdl:part name="projectCode" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="sendMsgToTerminalRequest">
+    <wsdl:part name="projectCode" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="checkEatRequest">
+    <wsdl:part name="studyID" type="soapenc:string" />
+    <wsdl:part name="listFrameLine" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="sendPersonMessagesRequest">
+    <wsdl:part name="msgType" type="xsd:int" />
+    <wsdl:part name="personCode" type="soapenc:string" />
+    <wsdl:part name="projectCode" type="soapenc:string" />
+    <wsdl:part name="projectName" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="changePersonLineEndRequest">
+    <wsdl:part name="fl" type="tns2:FrameLine" />
+  </wsdl:message>
+  <wsdl:message name="CheckOfficeupdRequest1">
+    <wsdl:part name="studyID" type="soapenc:string" />
+    <wsdl:part name="line" type="tns2:FrameLine" />
+    <wsdl:part name="string" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="queryOfficeCodesByProjResponse">
+    <wsdl:part name="queryOfficeCodesByProjReturn" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="webNotifyMsgRequest">
+    <wsdl:part name="parm" type="xsd:long" />
+    <wsdl:part name="ksid" type="xsd:long" />
+    <wsdl:part name="studyID" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="unCheckedOfficesToProjRequest">
+    <wsdl:part name="studyID" type="soapenc:string" />
+    <wsdl:part name="listCheckOffices" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="sendMsgToAreaTerminalRequest">
+    <wsdl:part name="projectCode" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="lineRequest">
+    <wsdl:part name="listFrameLine" type="impl:ArrayOf_xsd_anyType" />
+    <wsdl:part name="studyID" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="quick_sortRequest">
+    <wsdl:part name="s" type="impl:ArrayOf_xsd_anyType" />
+    <wsdl:part name="l" type="xsd:int" />
+    <wsdl:part name="r" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="updateCusPersonRequest">
+    <wsdl:part name="studyID" type="soapenc:string" />
+    <wsdl:part name="string" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="changeCurrentLineResponse" />
+  <wsdl:message name="insertLineInfoRequest">
+    <wsdl:part name="line" type="tns2:FrameLine" />
+  </wsdl:message>
+  <wsdl:message name="insertLineInfoResponse" />
+  <wsdl:message name="BOException">
+    <wsdl:part name="fault" type="tns1:BOException" />
+  </wsdl:message>
+  <wsdl:message name="getCheckedBcRequest">
+    <wsdl:part name="bcCode" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckOfficeupdRequest">
+    <wsdl:part name="studyID" type="soapenc:string" />
+    <wsdl:part name="line" type="tns2:FrameLineBc" />
+    <wsdl:part name="string" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="unCheckedOfficesToStudyIdResponse">
+    <wsdl:part name="unCheckedOfficesToStudyIdReturn" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="unCheckedOfficesToStudyIdRequest">
+    <wsdl:part name="studyID" type="soapenc:string" />
+    <wsdl:part name="listCheckOffices" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="forCheckOfficeRequest">
+    <wsdl:part name="studyID" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="sendMsgToPersonResponse" />
+  <wsdl:message name="getUnCheckedOfficesResponse">
+    <wsdl:part name="getUnCheckedOfficesReturn" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="sendAreaLineMessagesResponse" />
+  <wsdl:message name="mainRequest">
+    <wsdl:part name="args" type="impl:ArrayOf_soapenc_string" />
+  </wsdl:message>
+  <wsdl:message name="checkOfficeTjzResponse" />
+  <wsdl:message name="successResponse" />
+  <wsdl:message name="getFrameCustomerPersonRequest">
+    <wsdl:part name="studyID" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="getCheckOfficeForFourRequest">
+    <wsdl:part name="studyID" type="soapenc:string" />
+    <wsdl:part name="officeCode" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="webNotifyMsgByCRMResponse">
+    <wsdl:part name="webNotifyMsgByCRMReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="getNextCheckOfficeResponse">
+    <wsdl:part name="getNextCheckOfficeReturn" type="tns2:CheckOffices" />
+  </wsdl:message>
+  <wsdl:message name="forGetLineResponse" />
+  <wsdl:message name="checkingPersonTimeResponse" />
+  <wsdl:message name="changePersonLineBcRequest">
+    <wsdl:part name="projectCode" type="soapenc:string" />
+    <wsdl:part name="pTime" type="xsd:int" />
+    <wsdl:part name="personCode" type="soapenc:string" />
+    <wsdl:part name="stats" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="webGetMsgRequest">
+    <wsdl:part name="studyID" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="queryOfficeCodesByProjRequest">
+    <wsdl:part name="ProjectCode" type="soapenc:string" />
+    <wsdl:part name="officeCode" type="soapenc:string" />
+    <wsdl:part name="studyID" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="getFrameCustomerPersonResponse">
+    <wsdl:part name="getFrameCustomerPersonReturn" type="tns2:FrameCustomerPerson" />
+  </wsdl:message>
+  <wsdl:message name="changePersonLineEndResponse" />
+  <wsdl:message name="webNotifyMsgByCRMRequest">
+    <wsdl:part name="parm" type="xsd:long" />
+    <wsdl:part name="ksid" type="xsd:long" />
+    <wsdl:part name="studyID" type="soapenc:string" />
+    <wsdl:part name="json" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="sendMsgToPersonRequest">
+    <wsdl:part name="msgType" type="xsd:int" />
+    <wsdl:part name="personCode" type="soapenc:string" />
+    <wsdl:part name="projectCode" type="soapenc:string" />
+    <wsdl:part name="projectName" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="unCheckedOfficesToProjResponse">
+    <wsdl:part name="unCheckedOfficesToProjReturn" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="webGetMsgResponse">
+    <wsdl:part name="webGetMsgReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="sendMsgToTerminalResponse" />
+  <wsdl:message name="changePersonLineBcResponse" />
+  <wsdl:message name="successRequest">
+    <wsdl:part name="terminalId" type="soapenc:string" />
+    <wsdl:part name="projCode" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="sendLineMessagesResponse" />
+  <wsdl:message name="getCheckedBcResponse">
+    <wsdl:part name="getCheckedBcReturn" type="tns2:CheckBc" />
+  </wsdl:message>
+  <wsdl:portType name="LineService">
+    <wsdl:operation name="main" parameterOrder="args">
+      <wsdl:input name="mainRequest" message="impl:mainRequest" />
+      <wsdl:output name="mainResponse" message="impl:mainResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="success" parameterOrder="terminalId projCode">
+      <wsdl:input name="successRequest" message="impl:successRequest" />
+      <wsdl:output name="successResponse" message="impl:successResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="line" parameterOrder="listFrameLine studyID">
+      <wsdl:input name="lineRequest" message="impl:lineRequest" />
+      <wsdl:output name="lineResponse" message="impl:lineResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="queryOfficeCodesByProj" parameterOrder="ProjectCode officeCode studyID">
+      <wsdl:input name="queryOfficeCodesByProjRequest" message="impl:queryOfficeCodesByProjRequest" />
+      <wsdl:output name="queryOfficeCodesByProjResponse" message="impl:queryOfficeCodesByProjResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="webNotifyMsg" parameterOrder="parm ksid studyID">
+      <wsdl:input name="webNotifyMsgRequest" message="impl:webNotifyMsgRequest" />
+      <wsdl:output name="webNotifyMsgResponse" message="impl:webNotifyMsgResponse" />
+      <wsdl:fault name="BOException" message="impl:BOException" />
+    </wsdl:operation>
+    <wsdl:operation name="getCheckedBc" parameterOrder="bcCode">
+      <wsdl:input name="getCheckedBcRequest" message="impl:getCheckedBcRequest" />
+      <wsdl:output name="getCheckedBcResponse" message="impl:getCheckedBcResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="webSetTeam" parameterOrder="studyID jcks">
+      <wsdl:input name="webSetTeamRequest" message="impl:webSetTeamRequest" />
+      <wsdl:output name="webSetTeamResponse" message="impl:webSetTeamResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="checkEat" parameterOrder="studyID listFrameLine">
+      <wsdl:input name="checkEatRequest" message="impl:checkEatRequest" />
+      <wsdl:output name="checkEatResponse" message="impl:checkEatResponse" />
+      <wsdl:fault name="BOException" message="impl:BOException" />
+    </wsdl:operation>
+    <wsdl:operation name="goNextProj" parameterOrder="studyID line">
+      <wsdl:input name="goNextProjRequest" message="impl:goNextProjRequest" />
+      <wsdl:output name="goNextProjResponse" message="impl:goNextProjResponse" />
+      <wsdl:fault name="BOException" message="impl:BOException" />
+    </wsdl:operation>
+    <wsdl:operation name="webGetMsg" parameterOrder="studyID">
+      <wsdl:input name="webGetMsgRequest" message="impl:webGetMsgRequest" />
+      <wsdl:output name="webGetMsgResponse" message="impl:webGetMsgResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="insertLineInfo" parameterOrder="line">
+      <wsdl:input name="insertLineInfoRequest" message="impl:insertLineInfoRequest" />
+      <wsdl:output name="insertLineInfoResponse" message="impl:insertLineInfoResponse" />
+      <wsdl:fault name="BOException" message="impl:BOException" />
+    </wsdl:operation>
+    <wsdl:operation name="getUnCheckedOffices" parameterOrder="studyID">
+      <wsdl:input name="getUnCheckedOfficesRequest" message="impl:getUnCheckedOfficesRequest" />
+      <wsdl:output name="getUnCheckedOfficesResponse" message="impl:getUnCheckedOfficesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getNextCheckOffice" parameterOrder="studyID officesCode">
+      <wsdl:input name="getNextCheckOfficeRequest" message="impl:getNextCheckOfficeRequest" />
+      <wsdl:output name="getNextCheckOfficeResponse" message="impl:getNextCheckOfficeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getCheckOfficeForFour" parameterOrder="studyID officeCode">
+      <wsdl:input name="getCheckOfficeForFourRequest" message="impl:getCheckOfficeForFourRequest" />
+      <wsdl:output name="getCheckOfficeForFourResponse" message="impl:getCheckOfficeForFourResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="changePersonLine" parameterOrder="projectCode pTime personCode stats">
+      <wsdl:input name="changePersonLineRequest" message="impl:changePersonLineRequest" />
+      <wsdl:output name="changePersonLineResponse" message="impl:changePersonLineResponse" />
+      <wsdl:fault name="BOException" message="impl:BOException" />
+    </wsdl:operation>
+    <wsdl:operation name="changePersonLine" parameterOrder="fl">
+      <wsdl:input name="changePersonLineRequest1" message="impl:changePersonLineRequest1" />
+      <wsdl:output name="changePersonLineResponse1" message="impl:changePersonLineResponse1" />
+      <wsdl:fault name="BOException" message="impl:BOException" />
+    </wsdl:operation>
+    <wsdl:operation name="changePersonLine" parameterOrder="fl">
+      <wsdl:input name="changePersonLineRequest2" message="impl:changePersonLineRequest2" />
+      <wsdl:output name="changePersonLineResponse2" message="impl:changePersonLineResponse2" />
+      <wsdl:fault name="BOException" message="impl:BOException" />
+    </wsdl:operation>
+    <wsdl:operation name="forCheckOffice" parameterOrder="studyID">
+      <wsdl:input name="forCheckOfficeRequest" message="impl:forCheckOfficeRequest" />
+      <wsdl:output name="forCheckOfficeResponse" message="impl:forCheckOfficeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOfficeupd" parameterOrder="studyID line string">
+      <wsdl:input name="CheckOfficeupdRequest" message="impl:CheckOfficeupdRequest" />
+      <wsdl:output name="CheckOfficeupdResponse" message="impl:CheckOfficeupdResponse" />
+      <wsdl:fault name="BOException" message="impl:BOException" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOfficeupd" parameterOrder="studyID line string">
+      <wsdl:input name="CheckOfficeupdRequest1" message="impl:CheckOfficeupdRequest1" />
+      <wsdl:output name="CheckOfficeupdResponse1" message="impl:CheckOfficeupdResponse1" />
+      <wsdl:fault name="BOException" message="impl:BOException" />
+    </wsdl:operation>
+    <wsdl:operation name="sendMsgToTerminal" parameterOrder="projectCode">
+      <wsdl:input name="sendMsgToTerminalRequest" message="impl:sendMsgToTerminalRequest" />
+      <wsdl:output name="sendMsgToTerminalResponse" message="impl:sendMsgToTerminalResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="changePersonLineBc" parameterOrder="projectCode pTime personCode stats">
+      <wsdl:input name="changePersonLineBcRequest" message="impl:changePersonLineBcRequest" />
+      <wsdl:output name="changePersonLineBcResponse" message="impl:changePersonLineBcResponse" />
+      <wsdl:fault name="BOException" message="impl:BOException" />
+    </wsdl:operation>
+    <wsdl:operation name="sendPersonMessages" parameterOrder="msgType personCode projectCode projectName">
+      <wsdl:input name="sendPersonMessagesRequest" message="impl:sendPersonMessagesRequest" />
+      <wsdl:output name="sendPersonMessagesResponse" message="impl:sendPersonMessagesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateCusPerson" parameterOrder="studyID string">
+      <wsdl:input name="updateCusPersonRequest" message="impl:updateCusPersonRequest" />
+      <wsdl:output name="updateCusPersonResponse" message="impl:updateCusPersonResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="sendLineMessages" parameterOrder="jcks">
+      <wsdl:input name="sendLineMessagesRequest" message="impl:sendLineMessagesRequest" />
+      <wsdl:output name="sendLineMessagesResponse" message="impl:sendLineMessagesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="sendAreaLineMessages" parameterOrder="projectCode">
+      <wsdl:input name="sendAreaLineMessagesRequest" message="impl:sendAreaLineMessagesRequest" />
+      <wsdl:output name="sendAreaLineMessagesResponse" message="impl:sendAreaLineMessagesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="queryProjectByOffcode" parameterOrder="officesCode personCode">
+      <wsdl:input name="queryProjectByOffcodeRequest" message="impl:queryProjectByOffcodeRequest" />
+      <wsdl:output name="queryProjectByOffcodeResponse" message="impl:queryProjectByOffcodeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="forGetLine" parameterOrder="vipStatus frameLine lineList">
+      <wsdl:input name="forGetLineRequest" message="impl:forGetLineRequest" />
+      <wsdl:output name="forGetLineResponse" message="impl:forGetLineResponse" />
+      <wsdl:fault name="BOException" message="impl:BOException" />
+    </wsdl:operation>
+    <wsdl:operation name="quick_sort" parameterOrder="s l r">
+      <wsdl:input name="quick_sortRequest" message="impl:quick_sortRequest" />
+      <wsdl:output name="quick_sortResponse" message="impl:quick_sortResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="insertChecklink" parameterOrder="studyID project_code office_code type">
+      <wsdl:input name="insertChecklinkRequest" message="impl:insertChecklinkRequest" />
+      <wsdl:output name="insertChecklinkResponse" message="impl:insertChecklinkResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="webNotifyMsgByCRM" parameterOrder="parm ksid studyID json">
+      <wsdl:input name="webNotifyMsgByCRMRequest" message="impl:webNotifyMsgByCRMRequest" />
+      <wsdl:output name="webNotifyMsgByCRMResponse" message="impl:webNotifyMsgByCRMResponse" />
+      <wsdl:fault name="BOException" message="impl:BOException" />
+    </wsdl:operation>
+    <wsdl:operation name="changePersonLineEnd" parameterOrder="fl">
+      <wsdl:input name="changePersonLineEndRequest" message="impl:changePersonLineEndRequest" />
+      <wsdl:output name="changePersonLineEndResponse" message="impl:changePersonLineEndResponse" />
+      <wsdl:fault name="BOException" message="impl:BOException" />
+    </wsdl:operation>
+    <wsdl:operation name="checkOfficeTjz" parameterOrder="studyID line">
+      <wsdl:input name="checkOfficeTjzRequest" message="impl:checkOfficeTjzRequest" />
+      <wsdl:output name="checkOfficeTjzResponse" message="impl:checkOfficeTjzResponse" />
+      <wsdl:fault name="BOException" message="impl:BOException" />
+    </wsdl:operation>
+    <wsdl:operation name="checkOfficeTjz" parameterOrder="studyID line">
+      <wsdl:input name="checkOfficeTjzRequest1" message="impl:checkOfficeTjzRequest1" />
+      <wsdl:output name="checkOfficeTjzResponse1" message="impl:checkOfficeTjzResponse1" />
+      <wsdl:fault name="BOException" message="impl:BOException" />
+    </wsdl:operation>
+    <wsdl:operation name="changeCurrentLine" parameterOrder="studyID projectCode officeCode">
+      <wsdl:input name="changeCurrentLineRequest" message="impl:changeCurrentLineRequest" />
+      <wsdl:output name="changeCurrentLineResponse" message="impl:changeCurrentLineResponse" />
+      <wsdl:fault name="BOException" message="impl:BOException" />
+    </wsdl:operation>
+    <wsdl:operation name="changeCurrentLine" parameterOrder="studyID officeCode">
+      <wsdl:input name="changeCurrentLineRequest1" message="impl:changeCurrentLineRequest1" />
+      <wsdl:output name="changeCurrentLineResponse1" message="impl:changeCurrentLineResponse1" />
+      <wsdl:fault name="BOException" message="impl:BOException" />
+    </wsdl:operation>
+    <wsdl:operation name="checkingPersonTime" parameterOrder="jcks fl">
+      <wsdl:input name="checkingPersonTimeRequest" message="impl:checkingPersonTimeRequest" />
+      <wsdl:output name="checkingPersonTimeResponse" message="impl:checkingPersonTimeResponse" />
+      <wsdl:fault name="BOException" message="impl:BOException" />
+    </wsdl:operation>
+    <wsdl:operation name="sendMsgToAreaTerminal" parameterOrder="projectCode">
+      <wsdl:input name="sendMsgToAreaTerminalRequest" message="impl:sendMsgToAreaTerminalRequest" />
+      <wsdl:output name="sendMsgToAreaTerminalResponse" message="impl:sendMsgToAreaTerminalResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="sendMsgToPerson" parameterOrder="msgType personCode projectCode projectName">
+      <wsdl:input name="sendMsgToPersonRequest" message="impl:sendMsgToPersonRequest" />
+      <wsdl:output name="sendMsgToPersonResponse" message="impl:sendMsgToPersonResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="unCheckedOfficesToStudyId" parameterOrder="studyID listCheckOffices">
+      <wsdl:input name="unCheckedOfficesToStudyIdRequest" message="impl:unCheckedOfficesToStudyIdRequest" />
+      <wsdl:output name="unCheckedOfficesToStudyIdResponse" message="impl:unCheckedOfficesToStudyIdResponse" />
+      <wsdl:fault name="BOException" message="impl:BOException" />
+    </wsdl:operation>
+    <wsdl:operation name="unCheckedOfficesToProj" parameterOrder="studyID listCheckOffices">
+      <wsdl:input name="unCheckedOfficesToProjRequest" message="impl:unCheckedOfficesToProjRequest" />
+      <wsdl:output name="unCheckedOfficesToProjResponse" message="impl:unCheckedOfficesToProjResponse" />
+      <wsdl:fault name="BOException" message="impl:BOException" />
+    </wsdl:operation>
+    <wsdl:operation name="getFrameCustomerPerson" parameterOrder="studyID">
+      <wsdl:input name="getFrameCustomerPersonRequest" message="impl:getFrameCustomerPersonRequest" />
+      <wsdl:output name="getFrameCustomerPersonResponse" message="impl:getFrameCustomerPersonResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LineServiceSoapBinding" type="impl:LineService">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="main">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="mainRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="mainResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="success">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="successRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="successResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="line">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="lineRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="lineResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryOfficeCodesByProj">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="queryOfficeCodesByProjRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="queryOfficeCodesByProjResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webNotifyMsg">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="webNotifyMsgRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="webNotifyMsgResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="BOException">
+        <wsdlsoap:fault use="encoded" name="BOException" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCheckedBc">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getCheckedBcRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getCheckedBcResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webSetTeam">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="webSetTeamRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="webSetTeamResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkEat">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="checkEatRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="checkEatResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="BOException">
+        <wsdlsoap:fault use="encoded" name="BOException" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="goNextProj">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="goNextProjRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="goNextProjResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="BOException">
+        <wsdlsoap:fault use="encoded" name="BOException" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="webGetMsg">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="webGetMsgRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="webGetMsgResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertLineInfo">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="insertLineInfoRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="insertLineInfoResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="BOException">
+        <wsdlsoap:fault use="encoded" name="BOException" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getUnCheckedOffices">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getUnCheckedOfficesRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getUnCheckedOfficesResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNextCheckOffice">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getNextCheckOfficeRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getNextCheckOfficeResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCheckOfficeForFour">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getCheckOfficeForFourRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getCheckOfficeForFourResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changePersonLine">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="changePersonLineRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="changePersonLineResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="BOException">
+        <wsdlsoap:fault use="encoded" name="BOException" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="changePersonLine">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="changePersonLineRequest1">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="changePersonLineResponse1">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="BOException">
+        <wsdlsoap:fault use="encoded" name="BOException" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="changePersonLine">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="changePersonLineRequest2">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="changePersonLineResponse2">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="BOException">
+        <wsdlsoap:fault use="encoded" name="BOException" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="forCheckOffice">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="forCheckOfficeRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="forCheckOfficeResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOfficeupd">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="CheckOfficeupdRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="CheckOfficeupdResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="BOException">
+        <wsdlsoap:fault use="encoded" name="BOException" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOfficeupd">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="CheckOfficeupdRequest1">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="CheckOfficeupdResponse1">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="BOException">
+        <wsdlsoap:fault use="encoded" name="BOException" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="sendMsgToTerminal">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="sendMsgToTerminalRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="sendMsgToTerminalResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changePersonLineBc">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="changePersonLineBcRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="changePersonLineBcResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="BOException">
+        <wsdlsoap:fault use="encoded" name="BOException" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="sendPersonMessages">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="sendPersonMessagesRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="sendPersonMessagesResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCusPerson">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updateCusPersonRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="updateCusPersonResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendLineMessages">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="sendLineMessagesRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="sendLineMessagesResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendAreaLineMessages">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="sendAreaLineMessagesRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="sendAreaLineMessagesResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryProjectByOffcode">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="queryProjectByOffcodeRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="queryProjectByOffcodeResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="forGetLine">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="forGetLineRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="forGetLineResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="BOException">
+        <wsdlsoap:fault use="encoded" name="BOException" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="quick_sort">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="quick_sortRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="quick_sortResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertChecklink">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="insertChecklinkRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="insertChecklinkResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webNotifyMsgByCRM">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="webNotifyMsgByCRMRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="webNotifyMsgByCRMResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="BOException">
+        <wsdlsoap:fault use="encoded" name="BOException" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="changePersonLineEnd">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="changePersonLineEndRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="changePersonLineEndResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="BOException">
+        <wsdlsoap:fault use="encoded" name="BOException" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="checkOfficeTjz">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="checkOfficeTjzRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="checkOfficeTjzResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="BOException">
+        <wsdlsoap:fault use="encoded" name="BOException" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="checkOfficeTjz">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="checkOfficeTjzRequest1">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="checkOfficeTjzResponse1">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="BOException">
+        <wsdlsoap:fault use="encoded" name="BOException" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="changeCurrentLine">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="changeCurrentLineRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="changeCurrentLineResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="BOException">
+        <wsdlsoap:fault use="encoded" name="BOException" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="changeCurrentLine">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="changeCurrentLineRequest1">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="changeCurrentLineResponse1">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="BOException">
+        <wsdlsoap:fault use="encoded" name="BOException" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="checkingPersonTime">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="checkingPersonTimeRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="checkingPersonTimeResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="BOException">
+        <wsdlsoap:fault use="encoded" name="BOException" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="sendMsgToAreaTerminal">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="sendMsgToAreaTerminalRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="sendMsgToAreaTerminalResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendMsgToPerson">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="sendMsgToPersonRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="sendMsgToPersonResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="unCheckedOfficesToStudyId">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="unCheckedOfficesToStudyIdRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="unCheckedOfficesToStudyIdResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="BOException">
+        <wsdlsoap:fault use="encoded" name="BOException" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="unCheckedOfficesToProj">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="unCheckedOfficesToProjRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="unCheckedOfficesToProjResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="BOException">
+        <wsdlsoap:fault use="encoded" name="BOException" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getFrameCustomerPerson">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getFrameCustomerPersonRequest">
+        <wsdlsoap:body use="encoded" namespace="http://service.amlu.tivacs.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getFrameCustomerPersonResponse">
+        <wsdlsoap:body use="encoded" namespace="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LineServiceService">
+    <wsdl:port name="LineService" binding="impl:LineServiceSoapBinding">
+      <wsdlsoap:address location="http://192.180.1.143:8060/PowerAppointLine/webservices/LineService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

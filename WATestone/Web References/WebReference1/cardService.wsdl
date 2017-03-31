@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns0="http://webservice.cardservice.rich.com/xsd" xmlns:axis2="http://webservice.cardservice.rich.com" xmlns:ns1="http://org.apache.axis2/xsd" targetNamespace="http://webservice.cardservice.rich.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+			cardService
+	    </wsdl:documentation>
+  <wsdl:types>
+    <xs:schema xmlns:ns="http://webservice.cardservice.rich.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://webservice.cardservice.rich.com/xsd">
+      <xs:element name="getCardApplyInfoFromSaleMan">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ldid" nillable="true" type="xs:string" />
+            <xs:element name="saleCode" nillable="true" type="xs:string" />
+            <xs:element name="startTime" nillable="true" type="xs:string" />
+            <xs:element name="endTime" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getCardApplyInfoFromSaleManResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getCardInfoFromKsq">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="flownum" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getCardInfoFromKsqResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getCardType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="cardnum" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getCardTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getOk">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ok" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getOkResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getOkMessage">
+    <wsdl:part name="part1" element="ns0:getOk" />
+  </wsdl:message>
+  <wsdl:message name="getOkResponse">
+    <wsdl:part name="part1" element="ns0:getOkResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCardTypeMessage">
+    <wsdl:part name="part1" element="ns0:getCardType" />
+  </wsdl:message>
+  <wsdl:message name="getCardTypeResponse">
+    <wsdl:part name="part1" element="ns0:getCardTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCardApplyInfoFromSaleManMessage">
+    <wsdl:part name="part1" element="ns0:getCardApplyInfoFromSaleMan" />
+  </wsdl:message>
+  <wsdl:message name="getCardApplyInfoFromSaleManResponse">
+    <wsdl:part name="part1" element="ns0:getCardApplyInfoFromSaleManResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCardInfoFromKsqMessage">
+    <wsdl:part name="part1" element="ns0:getCardInfoFromKsq" />
+  </wsdl:message>
+  <wsdl:message name="getCardInfoFromKsqResponse">
+    <wsdl:part name="part1" element="ns0:getCardInfoFromKsqResponse" />
+  </wsdl:message>
+  <wsdl:portType name="cardServicePortType">
+    <wsdl:operation name="getOk">
+      <wsdl:input xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsaw:Action="urn:getOk" message="axis2:getOkMessage" />
+      <wsdl:output message="axis2:getOkResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getCardType">
+      <wsdl:input xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsaw:Action="urn:getCardType" message="axis2:getCardTypeMessage" />
+      <wsdl:output message="axis2:getCardTypeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getCardApplyInfoFromSaleMan">
+      <wsdl:input xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsaw:Action="urn:getCardApplyInfoFromSaleMan" message="axis2:getCardApplyInfoFromSaleManMessage" />
+      <wsdl:output message="axis2:getCardApplyInfoFromSaleManResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getCardInfoFromKsq">
+      <wsdl:input xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsaw:Action="urn:getCardInfoFromKsq" message="axis2:getCardInfoFromKsqMessage" />
+      <wsdl:output message="axis2:getCardInfoFromKsqResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="cardServiceSOAP11Binding" type="axis2:cardServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getOk">
+      <soap:operation soapAction="urn:getOk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCardType">
+      <soap:operation soapAction="urn:getCardType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCardApplyInfoFromSaleMan">
+      <soap:operation soapAction="urn:getCardApplyInfoFromSaleMan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCardInfoFromKsq">
+      <soap:operation soapAction="urn:getCardInfoFromKsq" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="cardServiceSOAP12Binding" type="axis2:cardServicePortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getOk">
+      <soap12:operation soapAction="urn:getOk" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCardType">
+      <soap12:operation soapAction="urn:getCardType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCardApplyInfoFromSaleMan">
+      <soap12:operation soapAction="urn:getCardApplyInfoFromSaleMan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCardInfoFromKsq">
+      <soap12:operation soapAction="urn:getCardInfoFromKsq" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="cardServiceHttpBinding" type="axis2:cardServicePortType">
+    <http:binding verb="POST" />
+    <wsdl:operation name="getOk">
+      <http:operation location="getOk" />
+      <wsdl:input>
+        <mime:content type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCardType">
+      <http:operation location="getCardType" />
+      <wsdl:input>
+        <mime:content type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCardApplyInfoFromSaleMan">
+      <http:operation location="getCardApplyInfoFromSaleMan" />
+      <wsdl:input>
+        <mime:content type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCardInfoFromKsq">
+      <http:operation location="getCardInfoFromKsq" />
+      <wsdl:input>
+        <mime:content type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="cardService">
+    <wsdl:port name="cardServiceSOAP11port_http" binding="axis2:cardServiceSOAP11Binding">
+      <soap:address location="http://172.3.207.31:8080/cardservice/services/cardService" />
+    </wsdl:port>
+    <wsdl:port name="cardServiceSOAP12port_http" binding="axis2:cardServiceSOAP12Binding">
+      <soap12:address location="http://172.3.207.31:8080/cardservice/services/cardService" />
+    </wsdl:port>
+    <wsdl:port name="cardServiceHttpport1" binding="axis2:cardServiceHttpBinding">
+      <http:address location="http://172.3.207.31:8080/cardservice/rest/cardService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rename", "Rename\Rename.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApI", "WebApI\WebApI.csproj", "{52630647-5CB0-43FA-9259-ECDC6F0D8883}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcleOperate", "ExcleOperate\ExcleOperate.csproj", "{E4184C14-A2AD-4AB8-9D32-464402000516}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{52630647-5CB0-43FA-9259-ECDC6F0D8883}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52630647-5CB0-43FA-9259-ECDC6F0D8883}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52630647-5CB0-43FA-9259-ECDC6F0D8883}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4184C14-A2AD-4AB8-9D32-464402000516}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4184C14-A2AD-4AB8-9D32-464402000516}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4184C14-A2AD-4AB8-9D32-464402000516}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4184C14-A2AD-4AB8-9D32-464402000516}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

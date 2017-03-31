@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WATestone.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="WATestone_WebReference_reserveService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://128.1.10.175:8188/richTimer/services/reserveService.reserveServiceHttpSoap11Endpoint/</Value>
+    </Setting>
+    <Setting Name="WATestone_WebReference1_cardService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.3.207.31:8080/cardservice/services/cardService</Value>
+    </Setting>
+    <Setting Name="WATestone_WebReference2_cardService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.3.207.31:8080/cardservice_/services/cardService.cardServiceHttpSoap11Endpoint/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
