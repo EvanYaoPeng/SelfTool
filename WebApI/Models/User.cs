@@ -11,4 +11,11 @@ namespace WebApI.Models
         public string user_key { get; set; }
         public string lower_user_name { get; set; }
     }
+
+    public class Person
+    {
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+    }
 }

@@ -12,7 +12,7 @@ using System.Text;
 namespace UnitTestProject1
 {
     [TestClass]
-    public class UnitTest1
+    public class ExcleOpearte
     {
         [TestMethod]
         public void TestMethod1()

@@ -1,6 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Text;
+using System.Data;
 
 namespace UnitTestProject1
 {
@@ -23,6 +26,59 @@ namespace UnitTestProject1
             {
 
             }
+        }
+
+        public void TestBMYReport()
+        {
+            var dt = CRMDate();
+            if (dt != null && dt.Rows != null && dt.Rows.Count > 0)
+            { 
+                
+            }
+        }
+
+
+        public DataTable CRMDate()
+        {
+            SqlConnection conn = new SqlConnection("Server=172.3.207.22;uid=dengly;pwd=Pass@word;database=RichCRM;");
+            var sql = new StringBuilder();
+//            sql.Append(@"
+// select a.CheckCardNo,a.Status,a.BatchID,a.CheckCardType,a.CreateTime from CRM_CheckCard(nolock) a 
+//where
+//a.CheckCardType in (select id from CRM_CheckCardType(nolock) where SalesChannel='bmy') and 
+// convert(varchar(10),a.CreateTime,112) between '2017-02-01' and '2017-04-21'");
+            sql.Append(@" select a.CheckCardNo,a.Status,a.BatchID,a.CheckCardType,a.CreateTime from CRM_CheckCard(nolock) a 
+where CheckCardNo in('V10002376455','V10003625642','V10003623150')
+");
+            var cmd = new SqlCommand(sql.ToString(), conn);
+            var adapter = new SqlDataAdapter(cmd);
+            var dataSet = new DataSet();
+            adapter.Fill(dataSet);
+            return dataSet.Tables[0];
+        }
+        public DataTable DZDate(string vcardStr)
+        {
+            SqlConnection conn = new SqlConnection("Server=128.1.10.145;uid=new_Reconciliation;pwd=Pass@word;database=Rich_FinanceCheckSystem");
+            var sql = new StringBuilder();
+            sql.AppendFormat(@";with studyidlist as(
+                                select studyid,cardno from CIS91.HEALTHCIS.DBO.jcxx_code
+                                where cardno in({0})
+                                ),
+                                studyidKJJE as(
+                                 select STUDYID,sum(KLJE) sklje,sum(SFJE) sJSJE from FC_JCXX_SFXM 
+                                 where JXBZ!=1 and STUDYID in (select studyid from studyidlist)
+                                 group by STUDYID
+                                )
+                                select a.YLJG,a.CKTC,a.NUM3,b.sklje,b.sJSJE,c.cardno from FC_jcxx a
+                                left join studyidKJJE b on a.STUDYID=b.STUDYID
+                                left join studyidlist c on a.STUDYID=c.STUDYID
+                                where a.studyid in (select studyid from studyidlist)", vcardStr);
+
+            var cmd = new SqlCommand(sql.ToString(), conn);
+            var adapter = new SqlDataAdapter(cmd);
+            var dataSet = new DataSet();
+            adapter.Fill(dataSet);
+            return dataSet.Tables[0];
         }
     }
 

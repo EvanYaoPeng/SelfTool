@@ -135,7 +135,7 @@ namespace ExcleOperate
 
             System.Web.HttpResponse Response = System.Web.HttpContext.Current.Response;
             Response.ContentType = "application/vnd.ms-excel";
-            Response.AddHeader("Content-Disposition", string.Format("attachment; filename={0}.xls", HttpUtility.UrlEncode(fileName + DateTime.Now.ToString("yyyyMMddHHmmss"))));
+            Response.AddHeader("Content-Disposition", string.Format("attachment; filename={0}.xlsx", HttpUtility.UrlEncode(fileName + DateTime.Now.ToString("yyyyMMddHHmmss"))));
             Response.Clear();
             Response.BinaryWrite(ms.ToArray());
             Response.End();
