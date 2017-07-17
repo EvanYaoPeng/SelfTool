@@ -14,3 +14,4 @@ D:\SelfTest\SelfTools\WebApI\bin\zh-Hans\System.Web.Http.resources.dll
 D:\SelfTest\SelfTools\WebApI\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
 D:\SelfTest\SelfTools\WebApI\obj\Debug\WebApI.dll
 D:\SelfTest\SelfTools\WebApI\obj\Debug\WebApI.pdb
+D:\SelfTest\SelfTools\WebApI\obj\Debug\WebApI.csprojResolveAssemblyReference.cache

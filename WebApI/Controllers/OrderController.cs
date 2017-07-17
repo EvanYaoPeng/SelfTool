@@ -9,6 +9,7 @@ namespace WebApI.Controllers
 {
     public class OrderController : ApiController
     {
+        [Route]
         [HttpGet]
         public object GetAll()
         {
