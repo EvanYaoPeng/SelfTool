@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcleOperate", "ExcleOperat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestWebAPIClinet", "RestWebAPIClinet\RestWebAPIClinet.csproj", "{F89ADF5A-F44E-4AD4-8EBC-B6316CE390E1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithm", "Algorithm\Algorithm.csproj", "{431DF660-C554-4269-A0FD-2CEDE1E866AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{F89ADF5A-F44E-4AD4-8EBC-B6316CE390E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F89ADF5A-F44E-4AD4-8EBC-B6316CE390E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F89ADF5A-F44E-4AD4-8EBC-B6316CE390E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{431DF660-C554-4269-A0FD-2CEDE1E866AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{431DF660-C554-4269-A0FD-2CEDE1E866AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{431DF660-C554-4269-A0FD-2CEDE1E866AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{431DF660-C554-4269-A0FD-2CEDE1E866AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
