@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestWebAPIClinet", "RestWeb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithm", "Algorithm\Algorithm.csproj", "{431DF660-C554-4269-A0FD-2CEDE1E866AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLUnitTest", "XMLUnitTest\XMLUnitTest.csproj", "{DCB87B36-D43F-40D4-A011-471394E66780}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{431DF660-C554-4269-A0FD-2CEDE1E866AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{431DF660-C554-4269-A0FD-2CEDE1E866AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{431DF660-C554-4269-A0FD-2CEDE1E866AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCB87B36-D43F-40D4-A011-471394E66780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCB87B36-D43F-40D4-A011-471394E66780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCB87B36-D43F-40D4-A011-471394E66780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCB87B36-D43F-40D4-A011-471394E66780}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

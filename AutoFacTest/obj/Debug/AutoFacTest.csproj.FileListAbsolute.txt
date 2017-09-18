@@ -14,7 +14,6 @@ D:\SelfTest\SelfTools\AutoFacTest\bin\Microsoft.AspNet.FriendlyUrls.dll
 D:\SelfTest\SelfTools\AutoFacTest\bin\Microsoft.AspNet.Membership.OpenAuth.dll
 D:\SelfTest\SelfTools\AutoFacTest\bin\Microsoft.Web.Infrastructure.dll
 D:\SelfTest\SelfTools\AutoFacTest\bin\System.Web.Providers.dll
-D:\SelfTest\SelfTools\AutoFacTest\bin\System.Net.Http.dll
 D:\SelfTest\SelfTools\AutoFacTest\bin\EntityFramework.xml
 D:\SelfTest\SelfTools\AutoFacTest\bin\DotNetOpenAuth.Core.xml
 D:\SelfTest\SelfTools\AutoFacTest\bin\DotNetOpenAuth.OAuth.xml
@@ -24,12 +23,10 @@ D:\SelfTest\SelfTools\AutoFacTest\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
 D:\SelfTest\SelfTools\AutoFacTest\bin\DotNetOpenAuth.AspNet.xml
 D:\SelfTest\SelfTools\AutoFacTest\bin\Microsoft.AspNet.Membership.OpenAuth.xml
 D:\SelfTest\SelfTools\AutoFacTest\bin\Microsoft.AspNet.FriendlyUrls.xml
-D:\SelfTest\SelfTools\AutoFacTest\bin\System.Net.Http.xml
 D:\SelfTest\SelfTools\AutoFacTest\bin\zh-Hans\EntityFramework.resources.dll
 D:\SelfTest\SelfTools\AutoFacTest\bin\zh-Hans\System.Web.Providers.resources.dll
 D:\SelfTest\SelfTools\AutoFacTest\bin\zh-Hans\Microsoft.AspNet.Membership.OpenAuth.resources.dll
 D:\SelfTest\SelfTools\AutoFacTest\bin\zh-Hans\Microsoft.AspNet.FriendlyUrls.resources.dll
-D:\SelfTest\SelfTools\AutoFacTest\bin\zh-Hans\System.Net.Http.resources.dll
 D:\SelfTest\SelfTools\AutoFacTest\obj\Debug\AutoFacTest.csprojResolveAssemblyReference.cache
 D:\SelfTest\SelfTools\AutoFacTest\obj\Debug\AutoFacTest.dll
 D:\SelfTest\SelfTools\AutoFacTest\obj\Debug\AutoFacTest.pdb
