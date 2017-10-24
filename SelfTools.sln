@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithm", "Algorithm\Algo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLUnitTest", "XMLUnitTest\XMLUnitTest.csproj", "{DCB87B36-D43F-40D4-A011-471394E66780}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMUnit", "TMUnit\TMUnit.csproj", "{CC9B2EBC-D415-4095-8EF4-D88BF122E7DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{DCB87B36-D43F-40D4-A011-471394E66780}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCB87B36-D43F-40D4-A011-471394E66780}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCB87B36-D43F-40D4-A011-471394E66780}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC9B2EBC-D415-4095-8EF4-D88BF122E7DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC9B2EBC-D415-4095-8EF4-D88BF122E7DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC9B2EBC-D415-4095-8EF4-D88BF122E7DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC9B2EBC-D415-4095-8EF4-D88BF122E7DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
