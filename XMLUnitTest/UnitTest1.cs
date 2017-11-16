@@ -47,5 +47,10 @@ namespace XMLUnitTest
             xw.Flush();
             xw.Close();
         }
+
+        public void TestParallel()
+        {
+
+        }
     }
 }

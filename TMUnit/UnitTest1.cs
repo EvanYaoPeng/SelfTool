@@ -79,12 +79,13 @@ namespace TMUnit
         {
             HttpWebRequest myHttpWebRequest = null;
             //myHttpWebRequest = (HttpWebRequest)WebRequest.Create("http://172.3.212.24:9000/TmallEticket.ashx");//接口地址
-            myHttpWebRequest = (HttpWebRequest)WebRequest.Create("http://localhost:28176/TmallEticket.ashx");//接口地址
-       
+           // myHttpWebRequest = (HttpWebRequest)WebRequest.Create("http://localhost:28176/TmallEticket.ashx");//接口地址
+            //myHttpWebRequest = (HttpWebRequest)WebRequest.Create("http://localhost:24333/api/Insurance");
+            myHttpWebRequest = (HttpWebRequest)WebRequest.Create("https://test.bmyi.cn/api/Insurance");
             myHttpWebRequest.ContentType = "application/x-www-form-urlencoded";
             myHttpWebRequest.Method = "POST";
             myHttpWebRequest.UserAgent = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)";
-            string paraUrlCoded = "charset=GBK&refundFee=450000&amount=2&bizType=3001&method=refundSuccess&itemTitle=瑞慈体检卡 职场高端套餐 全面男女报告表单中心上海北京成都深&smsTemplate=验证码$code.您已成功订购瑞慈体检旗舰店提供的瑞慈体检卡 职场高端套餐 全面男女报告表单中心上海北京成都深,有效期2017/09/18至2018/09/17,消费时请出示本短信以验证.如有疑问,请联系卖家.&sendStyle=0&validStart=2017-09-18 00:00:00&sign=30413499D85C56E5526DA9D880555C58&mobile=15958988207&mobileType=0&cancelNum=2&version=2.0&token=067c483107246bbab532c153c7195692&isPerfReq=false&itemId=537965740612&skuProperties=购买人数:1人&organizerNick=瑞慈体检旗舰店&organizerId=796659284&requestId=15087238730388311&validEnd=2018-09-17 23:59:59&outerId=67507568513054908698&timestamp=2017-10-23 09:57:53,038";
+            string paraUrlCoded = "info=[{'CVALIDATE':'2017-11-15','SERENDDATE':'2017-11-15','CONTNO':'8828901070386128','SERCVALIDATE':'2017-11-15','SERVICEITEM':'视频咨询,门诊预约及名医诊疗服务,住院安排','PHONE':'15012770099','INSUREDNAME':'梅飞1','IDNO':'340881198503045312'}]";
             byte[] buf = System.Text.Encoding.UTF8.GetBytes(paraUrlCoded);
             myHttpWebRequest.ContentLength = buf.Length;
             Stream rs = myHttpWebRequest.GetRequestStream();
