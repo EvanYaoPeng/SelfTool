@@ -1,0 +1,6 @@
+D:\SelfTest\SelfTools\TMUnit\bin\Debug\TMUnit.dll
+D:\SelfTest\SelfTools\TMUnit\bin\Debug\TMUnit.pdb
+D:\SelfTest\SelfTools\TMUnit\bin\Debug\TopSdk.dll
+D:\SelfTest\SelfTools\TMUnit\obj\Debug\TMUnit.csprojResolveAssemblyReference.cache
+D:\SelfTest\SelfTools\TMUnit\obj\Debug\TMUnit.dll
+D:\SelfTest\SelfTools\TMUnit\obj\Debug\TMUnit.pdb

@@ -1,0 +1,7 @@
+D:\SelfTest\SelfTools\RestWebAPIClinet\obj\Debug\RestWebAPIClinet.csprojResolveAssemblyReference.cache
+D:\SelfTest\SelfTools\RestWebAPIClinet\bin\Debug\RestWebAPIClinet.exe.config
+D:\SelfTest\SelfTools\RestWebAPIClinet\bin\Debug\RestWebAPIClinet.exe
+D:\SelfTest\SelfTools\RestWebAPIClinet\bin\Debug\RestWebAPIClinet.pdb
+D:\SelfTest\SelfTools\RestWebAPIClinet\bin\Debug\Newtonsoft.Json.dll
+D:\SelfTest\SelfTools\RestWebAPIClinet\obj\Debug\RestWebAPIClinet.exe
+D:\SelfTest\SelfTools\RestWebAPIClinet\obj\Debug\RestWebAPIClinet.pdb

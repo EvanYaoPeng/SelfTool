@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+using Jd.Api.Response;
+using Jd.Api.Util;
+
+namespace Jd.Api.Request
+{
+public class VcItemAdvertiseApplyUpdateRequest : IJdRequest<VcItemAdvertiseApplyUpdateResponse>
+{
+		                                                                                                       
+public   		string
+   newWord  { get; set; }
+
+                  
+                                                                                                                                    
+                                                          
+public   		string
+   applyId  { get; set; }
+
+                  
+                                                                                                                                    
+                                 
+		private IDictionary<string, string> otherParameters;
+
+		public string GetApiName()
+        {
+			return "jingdong.vc.item.advertise.apply.update";
+        }
+
+		public IDictionary<string, string> GetParameters()
+        {
+            JdDictionary parameters = new JdDictionary();
+			parameters.Add("new_word", this.newWord);
+			parameters.Add("apply_id", this.applyId);
+            parameters.AddAll(this.otherParameters);
+            return parameters;
+        }
+
+        public void Validate()
+        {
+        }
+
+        public void AddOtherParameter(string key, string value)
+        {
+            if (this.otherParameters == null)
+            {
+                this.otherParameters = new JdDictionary();
+            }
+            this.otherParameters.Add(key, value);
+        }
+
+}
+}
+
+
+
+
+
+
+
+
+        
+ 
+

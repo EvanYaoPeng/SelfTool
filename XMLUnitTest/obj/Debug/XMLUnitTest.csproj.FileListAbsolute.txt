@@ -1,0 +1,5 @@
+D:\SelfTest\SelfTools\XMLUnitTest\bin\Debug\XMLUnitTest.dll
+D:\SelfTest\SelfTools\XMLUnitTest\bin\Debug\XMLUnitTest.pdb
+D:\SelfTest\SelfTools\XMLUnitTest\obj\Debug\XMLUnitTest.dll
+D:\SelfTest\SelfTools\XMLUnitTest\obj\Debug\XMLUnitTest.pdb
+D:\SelfTest\SelfTools\XMLUnitTest\obj\Debug\XMLUnitTest.csprojResolveAssemblyReference.cache

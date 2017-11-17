@@ -1,0 +1,5 @@
+D:\SelfTest\SelfTools\ParallelT\bin\Debug\ParallelT.exe
+D:\SelfTest\SelfTools\ParallelT\bin\Debug\ParallelT.pdb
+D:\SelfTest\SelfTools\ParallelT\obj\Debug\ParallelT.csprojResolveAssemblyReference.cache
+D:\SelfTest\SelfTools\ParallelT\obj\Debug\ParallelT.exe
+D:\SelfTest\SelfTools\ParallelT\obj\Debug\ParallelT.pdb

@@ -1,0 +1,4 @@
+D:\SelfTest\SelfTools\Algorithm\bin\Debug\Algorithm.dll
+D:\SelfTest\SelfTools\Algorithm\bin\Debug\Algorithm.pdb
+D:\SelfTest\SelfTools\Algorithm\obj\Debug\Algorithm.dll
+D:\SelfTest\SelfTools\Algorithm\obj\Debug\Algorithm.pdb

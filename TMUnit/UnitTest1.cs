@@ -81,11 +81,11 @@ namespace TMUnit
             //myHttpWebRequest = (HttpWebRequest)WebRequest.Create("http://172.3.212.24:9000/TmallEticket.ashx");//接口地址
            // myHttpWebRequest = (HttpWebRequest)WebRequest.Create("http://localhost:28176/TmallEticket.ashx");//接口地址
             //myHttpWebRequest = (HttpWebRequest)WebRequest.Create("http://localhost:24333/api/Insurance");
-            myHttpWebRequest = (HttpWebRequest)WebRequest.Create("https://test.bmyi.cn/api/Insurance");
+            myHttpWebRequest = (HttpWebRequest)WebRequest.Create("http://20.0.0.40:8014/api/Insurance");
             myHttpWebRequest.ContentType = "application/x-www-form-urlencoded";
             myHttpWebRequest.Method = "POST";
             myHttpWebRequest.UserAgent = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)";
-            string paraUrlCoded = "info=[{'CVALIDATE':'2017-11-15','SERENDDATE':'2017-11-15','CONTNO':'8828901070386128','SERCVALIDATE':'2017-11-15','SERVICEITEM':'视频咨询,门诊预约及名医诊疗服务,住院安排','PHONE':'15012770099','INSUREDNAME':'梅飞1','IDNO':'340881198503045312'}]";
+            string paraUrlCoded = "info=[{'CVALIDATE':'2017-11-28','SERENDDATE':'2017-11-15','CONTNO':'8828901070386128','SERCVALIDATE':'2017-11-15','SERVICEITEM':'视频咨询,门诊预约及名医诊疗服务,住院安排','PHONE':'15012770099','INSUREDNAME':'梅飞1','IDNO':'340881198503045312'}]";
             byte[] buf = System.Text.Encoding.UTF8.GetBytes(paraUrlCoded);
             myHttpWebRequest.ContentLength = buf.Length;
             Stream rs = myHttpWebRequest.GetRequestStream();
