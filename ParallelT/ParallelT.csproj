@@ -46,6 +46,30 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaskDemo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="CodeTemplates\AddController\ApiController.tt" />
+    <Content Include="CodeTemplates\AddController\ApiControllerWithContext.tt" />
+    <Content Include="CodeTemplates\AddController\Controller.tt" />
+    <Content Include="CodeTemplates\AddController\ControllerWithContext.tt" />
+    <Content Include="CodeTemplates\AddView\AspxCSharp\Create.tt" />
+    <Content Include="CodeTemplates\AddView\AspxCSharp\Delete.tt" />
+    <Content Include="CodeTemplates\AddView\AspxCSharp\Details.tt" />
+    <Content Include="CodeTemplates\AddView\AspxCSharp\Edit.tt" />
+    <Content Include="CodeTemplates\AddView\AspxCSharp\Empty.tt" />
+    <Content Include="CodeTemplates\AddView\AspxCSharp\List.tt" />
+    <Content Include="CodeTemplates\AddView\CSHTML\Create.tt" />
+    <Content Include="CodeTemplates\AddView\CSHTML\Delete.tt" />
+    <Content Include="CodeTemplates\AddView\CSHTML\Details.tt" />
+    <Content Include="CodeTemplates\AddView\CSHTML\Edit.tt" />
+    <Content Include="CodeTemplates\AddView\CSHTML\Empty.tt" />
+    <Content Include="CodeTemplates\AddView\CSHTML\List.tt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

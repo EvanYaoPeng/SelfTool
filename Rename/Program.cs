@@ -11,7 +11,8 @@ namespace Rename
     {
         static void Main(string[] args)
         {
-            MoveFileToNew(@"D:\learn\1709\", @"D:\learn\170901\rpfile\");
+            DetleteFile(@"D:\SelfTest\SelfTools\MvcTools\Templates\");
+            //MoveFileToNew(@"D:\learn\1709\", @"D:\learn\170901\rpfile\");
             //DirectoryInfo di = new DirectoryInfo(@"D:\learn\1709\");
             //int idx = 0;
 
@@ -79,6 +80,41 @@ namespace Rename
                 return false;
             }
             #endregion
+            return true;
+        }
+
+
+        public static bool DetleteFile(string sourcePatch)
+        {
+            try
+            {
+                string[] labDirs = Directory.GetDirectories(sourcePatch);//目录
+                string[] labFiles = Directory.GetFiles(sourcePatch);//文件
+                if (labFiles.Length > 0)
+                {
+                    for (int i = 0; i < labFiles.Length; i++)
+                    {
+                        if (labFiles[i].ToString().Contains(".vb.t4"))//排除.lab文件
+                        {
+                            File.Delete(sourcePatch + "\\" + Path.GetFileName(labFiles[i]));//.Move(sourcePatch + "\\" + Path.GetFileName(labFiles[i]), @"D:\learn\170901\rpfile\" + Path.GetFileName(labFiles[i]));
+                        }
+                    }
+                }
+                if (labDirs.Length > 0)
+                {
+                    for (int j = 0; j < labDirs.Length; j++)
+                    {
+                        Directory.GetDirectories(sourcePatch + "\\" + Path.GetFileName(labDirs[j]));
+
+                        //递归调用
+                        DetleteFile(sourcePatch + "\\" + Path.GetFileName(labDirs[j]));
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
             return true;
         }
 
