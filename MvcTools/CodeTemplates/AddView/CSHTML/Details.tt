@@ -7,12 +7,15 @@
 <#@ assembly name="System.Data.Linq" #>
 <#@ import namespace="System" #>
 <#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.ComponentModel" #> 
 <#@ import namespace="System.ComponentModel.DataAnnotations" #>
 <#@ import namespace="System.Data.Linq.Mapping" #>
 <#@ import namespace="System.Data.Objects.DataClasses" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Reflection" #>
 <#@ import namespace="Microsoft.VisualStudio.Web.Mvc.Scaffolding.BuiltIn" #>
+
+
 <#
 MvcTextTemplateHost mvcHost = MvcTemplateHost;
 #>
@@ -67,7 +70,7 @@ foreach (ModelProperty property in GetModelProperties(mvcHost.ViewDataType)) {
 #>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.<#= property.ValueExpression #>)
+         @Html.DisplayNameFor(model => model.<#= property.Description #>)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.<#= property.ValueExpression #>)
@@ -115,6 +118,8 @@ class ModelProperty {
     public bool IsForeignKey { get; set; }
     public bool IsReadOnly { get; set; }
     public bool Scaffold { get; set; }
+	// add Description  Attribute for chines show 
+	public string Description{get;set;}
 }
 
 // Change this list to include any non-primitive types you think should be eligible for display/edit
@@ -237,8 +242,10 @@ List<ModelProperty> GetEligibleProperties(Type type) {
                 IsPrimaryKey = IsPrimaryKey(prop),
                 IsForeignKey = IsForeignKey(prop),
                 IsReadOnly = prop.GetSetMethod() == null,
-                Scaffold = Scaffold(prop)
+                Scaffold = Scaffold(prop),
+				Description=((DescriptionAttribute)Attribute.GetCustomAttribute(prop, typeof(DescriptionAttribute))).Description
             });
+			//add Description  Attribute for chines show 
         }
     }
 
